@@ -1,0 +1,32 @@
+@use 'abstracts';
+
+@media screen and (abstracts.get-size-query('md')) {
+  .theme-banner {
+    &--title {
+      margin-bottom: 1rem;
+      font-weight: 400;
+      text-align: center;
+    }
+
+    &--list {
+      display: flex;
+    }
+  }
+
+  .card--theme {
+    flex: 1 1 25%;
+    min-height: 20vh;
+    background: abstracts.get-color('green');
+    padding: abstracts.sizes-full(1rem);
+    color: abstracts.get-color('white');
+    text-shadow: 0 3px 6px rgba(51, 51, 51, 0.2);
+    align-items: flex-end;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+
+    &:not(:last-of-type) {
+      margin: abstracts.sizes-full(0, 2rem, 0, 0);
+    }
+  }
+}

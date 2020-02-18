@@ -1,0 +1,59 @@
+@use 'abstracts';
+
+@media screen and (abstracts.get-size-query('md')) {
+  .arrangement-banner {
+    position: relative;
+    display: flex;
+    box-shadow: 0 3px 6px rgba(51, 51, 51, 0.2);
+
+    &--figure {
+      width: 200px;
+      max-height: 250px;
+      margin: abstracts.sizes-full(0, 1rem, 0, 0);
+    }
+
+    &--content {
+      padding: abstracts.sizes-full(1rem, 0, 0);
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &--title {
+      font-weight: 400;
+      color: abstracts.get-color('green');
+      margin: abstracts.sizes-full(0, 0, .5rem);
+      flex: 1 1 100%;
+    }
+
+    &--excerpt {
+      display: block;
+      margin: abstracts.sizes-full(0, 0, .5rem);
+      flex: 1 1 100%;
+    }
+
+    &--meta {
+      display: flex;
+      flex: 1 1 100%;
+
+      > .button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+        line-height: 1;
+      }
+
+      > * {
+        flex: 1 1 auto;
+      }
+    }
+
+    svg {
+      color: abstracts.get-color('green');
+    }
+
+    &:not(:last-of-type) {
+      margin: abstracts.sizes-full(0, 0, 1rem, 0);
+    }
+  }
+}

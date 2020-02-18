@@ -1,4 +1,5 @@
 @use 'sass:map';
+@use 'sass:color';
 
 $red: hsl(0, 49%, 47%) !default;
 $blue: hsl(201, 71%, 38%) !default;
@@ -6,17 +7,21 @@ $green: hsl(114, 64%, 39%) !default;
 $yellow: hsl(42, 75%, 52%) !default;
 
 $gray: hsl(0, 0%, 96%) !default;
-$black: hsl(0, 0%, 0%) !default;
+$black: hsl(0, 0%, 14%) !default;
 $white: hsl(0, 0%, 100%) !default;
 
 $colors: (
   'red': ($red, $white),
+  'red-opaque': (color.adjust($red, $alpha: -0.8%), $black),
   'blue': ($blue, $black),
-  'green': ($green, $black),
+  'blue-opaque': (color.adjust($blue, $alpha: -0.8%), $black),
+  'green': ($green, $white),
+  'green-opaque': (color.adjust($green, $alpha: -0.8%), $black),
   'yellow': ($yellow, $black),
+  'yellow-opaque': (color.adjust($yellow, $alpha: -0.8%), $black),
   'gray': ($gray, $black),
   'black': ($black, $white),
-  'white': ($white, $black)
+  'white': ($white, $black),
 );
 
 $theme-colors: () !default;

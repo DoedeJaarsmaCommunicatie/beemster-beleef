@@ -1,0 +1,8 @@
+@use 'abstracts';
+
+@each $key, $color  in abstracts.$colors {
+  .bg-#{$key} {
+    background-color: abstracts.get-color($key);
+    color: abstracts.get-color($key, $inverted: true)
+  }
+}

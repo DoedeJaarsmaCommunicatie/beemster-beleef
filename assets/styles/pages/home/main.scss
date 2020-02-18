@@ -1,0 +1,27 @@
+@use 'abstracts';
+
+@media screen and (abstracts.get-size-query('md')) {
+  .main-content {
+    display: flex;
+
+    > * {
+      flex: 1 1 50%;
+    }
+  }
+
+  .main-content--banner {
+    margin-right: 4rem;
+    padding: 4rem 2rem;
+    color: abstracts.get-color('white');
+    display: flex;
+    flex-direction: column;
+
+    &--footer {
+      margin: abstracts.sizes-full(auto, auto, 0);
+    }
+
+    h2 {
+      text-align: center;
+    }
+  }
+}

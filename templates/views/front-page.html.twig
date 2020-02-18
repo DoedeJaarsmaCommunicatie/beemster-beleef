@@ -1,0 +1,103 @@
+{% extends 'layouts/app.twig' %}
+
+{% block content %}
+<!-- Homepage banner -->
+<header class="front_page-banner"
+        role="banner"
+        style="background-image: url('//via.placeholder.com/1920x500')"
+>
+    <section class="front_page-banner--body">
+        <h1>{{ __('De leukste activiteiten voor groepen', 'bdb') }}</h1>
+    </section>
+
+    <section class="front_page-banner--footer">
+        <a class="button is-green mr-4" href="#">
+            {{ __('Bekijk arrangementen', 'bdb') }}
+        </a>
+        <a class="button is-white" href="#">
+            {{ __('Ontdek de locaties', 'bdb') }}
+        </a>
+    </section>
+</header>
+<section role="complementary" class="bg-green-opaque py-4 theme-banner">
+    <div class="container mx-auto">
+        <h3 class="heading-2 theme-banner--title">{{ __('Onze thema\'s', 'bfb') }}</h3>
+        <nav class="theme-banner--list" role="doc-pagelist">
+            <article role="article" class="card--theme">
+                <a href="#"></a>
+                <h3 class="theme-banner--list--title">Historisch en Waanzinnig</h3>
+            </article>
+            <article role="article" class="card--theme">
+                <a href="#"></a>
+                <h3 class="theme-banner--list--title">Puur en natuur</h3>
+            </article>
+            <article role="article" class="card--theme">
+                <a href="#"></a>
+                <h3 class="theme-banner--list--title">Werelderfgoed in het kwadraat</h3>
+            </article>
+            <article role="article" class="card--theme">
+                <a href="#"></a>
+                <h3 class="theme-banner--list--title">Cultuur</h3>
+            </article>
+        </nav>
+    </div>
+</section>
+
+<main class="container mx-auto py-4 main-content">
+    <aside class="main-content--banner" style="background-image: url('//via.placeholder.com/750x705/1c76a6')">
+        <div class="main-content--banner--header">
+            <h2>Organiseer je dagje uit in de beemster</h2>
+        </div>
+        <div class="main-content--banner--footer">
+            <a href="#" class="button is-green">Bekijk arrangementen</a>
+        </div>
+    </aside>
+    <section>
+        <h3 class="mb-4">Uitgelichte arrangementen</h3>
+        <nav role="doc-pagelist" class="main-content--arrangements">
+            <article class="arrangement-banner">
+                <a href="#"></a>
+                <figure class="arrangement-banner--figure"><img src="//via.placeholder.com/300/31a324" alt="Arrangement #1" /></figure>
+                <section class="arrangement-banner--content">
+                    <h4 class="arrangement-banner--title">Lorem ipsum</h4>
+                    <span class="arrangement-banner--excerpt">Lorem ipsum dolor sit amet, consetetur</span>
+
+                    <aside class="arrangement-banner--meta">
+                        <span><i class="far fa-clock"></i> Dagdeel</span>
+                        <span><i class="fas fa-euro-sign"></i> v.a. 23,00 p.p.</span>
+                        <a class="button is-red no-radius no-padding">Bekijk</a>
+                    </aside>
+                </section>
+            </article>
+            <article class="arrangement-banner">
+                <a href="#"></a>
+                <figure class="arrangement-banner--figure"><img src="//via.placeholder.com/300/31a324" alt="Arrangement #2" /></figure>
+                <section class="arrangement-banner--content">
+                    <h4 class="arrangement-banner--title">Lorem ipsum</h4>
+                    <span class="arrangement-banner--excerpt">Lorem ipsum dolor sit amet, consetetur</span>
+
+                    <aside class="arrangement-banner--meta">
+                        <span><i class="far fa-clock"></i> Dagdeel</span>
+                        <span><i class="fas fa-euro-sign"></i> v.a. 23,00 p.p.</span>
+                        <a class="button is-red no-radius no-padding">Bekijk</a>
+                    </aside>
+                </section>
+            </article>
+            <article class="arrangement-banner">
+                <a href="#"></a>
+                <figure class="arrangement-banner--figure"><img src="//via.placeholder.com/300/31a324" alt="Arrangement #3" /></figure>
+                <section class="arrangement-banner--content">
+                    <h4 class="arrangement-banner--title">Lorem ipsum</h4>
+                    <span class="arrangement-banner--excerpt">Lorem ipsum dolor sit amet, consetetur</span>
+
+                    <aside class="arrangement-banner--meta">
+                        <span><i class="far fa-clock"></i> Dagdeel</span>
+                        <span><i class="fas fa-euro-sign"></i> v.a. 23,00 p.p.</span>
+                        <a class="button is-red no-radius no-padding">Bekijk</a>
+                    </aside>
+                </section>
+            </article>
+        </nav>
+    </section>
+</main>
+{% endblock %}

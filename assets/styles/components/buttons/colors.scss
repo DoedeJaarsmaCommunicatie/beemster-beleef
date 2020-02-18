@@ -1,0 +1,10 @@
+@use 'abstracts';
+
+@each $key, $color  in abstracts.$colors {
+  .button {
+    &.is-#{$key} {
+      background-color: abstracts.get-color($key);
+      color: abstracts.get-color($key, $inverted: true)
+    }
+  }
+}
