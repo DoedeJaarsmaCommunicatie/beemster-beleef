@@ -1,0 +1,17 @@
+@use 'sass:map';
+
+$spacings: (
+  'sm': 0.5rem,
+  'md': 1rem,
+  'lg': 2rem,
+);
+
+$padding: map.merge($spacings, ());
+$theme-padding: () !default;
+
+$margin: map.merge($spacings, ());
+$theme-margin: () !default;
+
+$padding: map.merge($padding, $theme-padding);
+$margin: map.merge($margin, $theme-margin);
+

@@ -1,0 +1,6 @@
+@use "abstracts/functions" as f;
+
+.menu-item {
+  color: f.get-color('black');
+  padding: f.padding-full(1rem, 0.5rem);
+}

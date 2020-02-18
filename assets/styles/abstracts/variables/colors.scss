@@ -1,0 +1,24 @@
+@use 'sass:map';
+
+$red: hsl(0, 49%, 47%) !default;
+$blue: hsl(201, 71%, 38%) !default;
+$green: hsl(114, 64%, 39%) !default;
+$yellow: hsl(42, 75%, 52%) !default;
+
+$gray: hsl(0, 0%, 96%) !default;
+$black: hsl(0, 0%, 0%) !default;
+$white: hsl(0, 0%, 100%) !default;
+
+$colors: (
+  'red': ($red, $white),
+  'blue': ($blue, $black),
+  'green': ($green, $black),
+  'yellow': ($yellow, $black),
+  'gray': ($gray, $black),
+  'black': ($black, $white),
+  'white': ($white, $black)
+);
+
+$theme-colors: () !default;
+
+$colors: map.merge($colors, $theme-colors);

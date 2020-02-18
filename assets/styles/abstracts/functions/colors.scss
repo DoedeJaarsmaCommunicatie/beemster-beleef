@@ -1,0 +1,12 @@
+@use 'sass:list';
+@use 'sass:map';
+@use "abstracts/variables/colors";
+
+@function get-color($color, $inverted: false) {
+  $color: map.get(colors.$colors, $color);
+
+  @if $inverted {
+    @return list.nth($color, 2);
+  }
+  @return list.nth($color, 1);
+}
