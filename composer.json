@@ -1,11 +1,12 @@
 {
   "require": {
+    "php": "^7.3",
     "yahnis-elsts/plugin-update-checker": "^4.8.1",
     "aristath/kirki": "^3.0",
     "timber/timber": "^1.15",
     "jjgrainger/posttypes": "^2.0",
     "monolog/monolog": "^2.0",
-    "nesbot/carbon": "^2.29",
+    "nesbot/carbon": "^2.30",
     "htmlburger/carbon-fields": "^3.1",
     "dusank/knapsack": "^10.0"
   },
