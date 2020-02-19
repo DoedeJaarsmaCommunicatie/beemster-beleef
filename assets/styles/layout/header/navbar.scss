@@ -1,0 +1,28 @@
+@use 'abstracts';
+
+.nav-bar {
+  @media screen and (abstracts.get-size-query('md')) {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+
+.nav-item {
+  color: abstracts.get-color('black');
+
+  &.current-menu-item {
+    color: abstracts.get-color('green');
+  }
+
+  &:hover {
+    color: abstracts.get-color('yellow');
+  }
+
+  &:not(:last-of-type) {
+    margin: abstracts.sizes-full(0, 1rem, 0, 0);
+  }
+  
+  @include abstracts.transition;
+}

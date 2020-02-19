@@ -1,0 +1,18 @@
+@use 'abstracts';
+
+.footer-menu {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-menu-item {
+  font-size: 80%;
+  color: abstracts.get-color('black');
+
+  &:not(:last-of-type) {
+    &::after {
+      content: '|';
+      margin: abstracts.sizes-full(0, .5rem);
+    }
+  }
+}

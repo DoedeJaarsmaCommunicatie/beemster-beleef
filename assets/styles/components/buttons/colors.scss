@@ -1,10 +1,25 @@
 @use 'abstracts';
+@use 'sass:color';
 
 @each $key, $color  in abstracts.$colors {
   .button {
     &.is-#{$key} {
       background-color: abstracts.get-color($key);
-      color: abstracts.get-color($key, $inverted: true)
+      color: abstracts.get-color($key, $inverted: true);
+      border: 1px solid abstracts.get-color($key);
+
+      &.is-outlined {
+        background-color: color.adjust(abstracts.get-color($key), $alpha: -1);
+        border-color: abstracts.get-color($key);
+        border-width: 1px;
+        border-style: solid;
+        color: abstracts.get-color($key);
+
+        &:hover {
+          background-color: abstracts.get-color($key);
+          color: abstracts.get-color($key, $inverted: true);
+        }
+      }
     }
   }
 }

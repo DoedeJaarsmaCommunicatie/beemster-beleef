@@ -1,0 +1,67 @@
+<section class="bg-green">
+    <div class="container mx-auto py-4">
+        <h3 class="review-title heading-2 mb-4">Review</h3>
+
+        <section class="reviews">
+            <article class="review">
+                <p class="heading-2">
+                    Iedereen van ons bedrijf praat er nog over. Wat was het geweldig!
+                </p>
+                <p class="heading-5">
+                    Jolanda de Visser
+                </p>
+            </article>
+            <article class="review is-active">
+                <p class="heading-2">
+                    Iedereen van ons bedrijf praat er nog over. Wat was het geweldig!
+                </p>
+                <p class="heading-5">
+                    Jolanda de Visser
+                </p>
+            </article>
+            <article class="review">
+                <p class="heading-2">
+                    Iedereen van ons bedrijf praat er nog over. Wat was het geweldig!
+                </p>
+                <p class="heading-5">
+                    Jolanda de Visser
+                </p>
+            </article>
+        </section>
+        <span class="review-indicators mt-4">
+            <i class="far fa-circle"></i>
+            <i class="fas fa-circle"></i>
+            <i class="far fa-circle"></i>
+        </span>
+    </div>
+</section>
+<!-- Contact banner -->
+<section class="bg-blue-opaque">
+    <div class="container mx-auto py-4">
+        <article class="media">
+            <figure class="image-left">
+                <img src="https://i.pravatar.cc/200" alt="Altijd persoonlijk contact!" />
+            </figure>
+            <div class="media-content">
+                <h3 class="media-title">Contact</h3>
+                <p>Heb je een vraag over een arrangement of wil je eerst contact. Bel of mail ons dan.</p>
+                <footer class="media-content--footer">
+                    <a class="button is-blue is-outlined" href="#"><i class="fas fa-phone fa-flip-horizontal mr-4"></i> 06 12 34 56 78</a>
+                    <a class="button is-blue is-outlined" href="#"><i class="fas fa-envelope mr-4"></i> info@beleefdebeemster.nl</a>
+                </footer>
+            </div>
+        </article>
+    </div>
+</section>
+<!-- Footer with nav -->
+<footer class="footer">
+    <div class="container mx-auto py-2">
+        <nav class="footer-menu">
+            {% for item in footerMenu.items %}
+                <a href="{{ item.link }}" title="{{ item.title }}" class="footer-menu-item">
+                    {{ item.title }}
+                </a>
+            {% endfor %}
+        </nav>
+    </div>
+</footer>

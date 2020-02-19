@@ -1,0 +1,30 @@
+@use 'abstracts';
+
+.media {
+  @media screen and (abstracts.get-size-query('md')) {
+    display: flex;
+
+    .image-left {
+      margin-right: 2rem;
+
+      img {
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+      }
+    }
+
+    &-content {
+      display: flex;
+      flex: 1 1 auto;
+      flex-direction: column;
+      .media-title {
+        font-weight: 400;
+      }
+
+      p {
+        margin: abstracts.sizes-full(auto, 0);
+      }
+    }
+  }
+}

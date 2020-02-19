@@ -1,0 +1,38 @@
+@use 'abstracts';
+
+.review-title {
+  color: abstracts.get-color('black');
+  font-weight: 400;
+  @media screen and (abstracts.get-size-query('md')) {
+    text-align: center;
+  }
+}
+
+.reviews {
+  @media screen and (abstracts.get-size-query('md')) {
+    display: flex;
+    overflow: hidden;
+  }
+}
+
+.review {
+  text-align: center;
+  line-height: 1;
+  @media screen and (abstracts.get-size-query('md')) {
+    flex: 0 0 50%;
+    margin: abstracts.sizes-full(0, auto);
+    display: none;
+
+    &.is-active {
+      display: block;
+    }
+  }
+}
+
+.review-indicators {
+  @media screen and (abstracts.get-size-query('md')) {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}

@@ -15,4 +15,6 @@
   &.no-padding {
     padding: 0;
   }
+
+  @include abstracts.transition;
 }
