@@ -2,6 +2,7 @@
 namespace App\Providers;
 
 use Timber\Menu;
+use App\Helpers\Str;
 use function register_nav_menus;
 
 /**
@@ -18,8 +19,9 @@ class MenuServiceProvider
      */
     protected $menus = [
         'primary-menu' => 'Primary',
+	    'footer-menu' => 'Footer'
     ];
-    
+
     /**
      * MenuServiceProvider constructor.
      */
@@ -27,7 +29,7 @@ class MenuServiceProvider
     {
         $this->boot();
     }
-    
+
     /**
      * Register nav menus in timber
      *
@@ -35,11 +37,11 @@ class MenuServiceProvider
      */
     public function boot(): void
     {
-        register_nav_menus($this->menus);
-        
+        register_nav_menus(apply_filters('bdb_register_menus', $this->menus));
+
         add_filter('timber/context', [ $this, 'registerContent' ]);
     }
-    
+
     /**
      * Register nav menu's in twig.
      *
@@ -50,7 +52,7 @@ class MenuServiceProvider
     public function registerContent($content)
     {
         foreach ($this->menus as $key => $name) {
-            $content[ \App\Helpers\Str::camel($key) ] = new Menu($key);
+            $content[ Str::camel($key) ] = new Menu($key);
         }
         return $content;
     }
