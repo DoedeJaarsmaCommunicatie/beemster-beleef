@@ -1,7 +1,10 @@
 <?php
 namespace App\Providers;
 
-class AppServiceProvider
+use PostTypes\PostType;
+use PostTypes\Taxonomy;
+
+class AppServiceProvider implements ServiceProvider
 {
 	protected $providers;
 	public function __construct()
@@ -9,12 +12,50 @@ class AppServiceProvider
 		$providers = include get_stylesheet_directory() . '/src/config/app.php';
 		$this->providers = $providers['providers'];
 		$this->boot();
+		$this->register();
 	}
-	
+
 	public function boot(): void
 	{
 		foreach ($this->providers as $provider) {
 			new $provider();
 		}
+	}
+
+	public function register(): void
+	{
+		$arrangement = new PostType([
+			'name'     => 'arrangement',
+			'singular' => 'Arrangement',
+			'plural'   => 'Arrangementen',
+			'slug'     => 'arrangement',
+		]);
+
+		$locations = new PostType([
+			'name'     => 'location',
+			'singular' => 'Locatie',
+			'plural'   => 'Locaties',
+			'slug'     => 'locatie',
+		]);
+
+		$reviews = new PostType([
+			'name'     => 'review',
+			'singular' => 'Review',
+			'plural'   => 'Reviews',
+			'slug'     => 'review',
+		]);
+
+		$theme = new Taxonomy([
+			'name'     => 'theme',
+			'singular' => 'Thema',
+			'plural'   => 'Themas',
+			'slug'     => 'thema',
+		]);
+
+		$arrangement->taxonomy('theme');
+		$arrangement->register();
+		$locations->register();
+		$reviews->register();
+		$theme->register();
 	}
 }
