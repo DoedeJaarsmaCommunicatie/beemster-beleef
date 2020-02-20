@@ -1,0 +1,20 @@
+{% set _bg = Image(post.get_field('header_image')) %}
+<style>
+    .front_page-banner {
+    background-image: url("{{ _bg.src('large') }}");
+    }
+</style>
+<header class="front_page-banner bg-blue-opaque" role="banner">
+    <section class="front_page-banner--body">
+        <h1>{{ post.get_field('header_title') }}</h1>
+    </section>
+
+    <section class="front_page-banner--footer">
+        <a class="button is-green mr-4" href="#">
+            {{ __('Bekijk arrangementen', 'bdb') }}
+        </a>
+        <a class="button is-white" href="#">
+            {{ __('Ontdek de locaties', 'bdb') }}
+        </a>
+    </section>
+</header>

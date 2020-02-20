@@ -1,0 +1,10 @@
+<section role="complementary" class="bg-green-opaque py-4 theme-banner">
+    <div class="container mx-auto">
+        <h3 class="heading-2 theme-banner--title">{{ __('Onze thema\'s', 'bfb') }}</h3>
+        <nav class="theme-banner--list" role="doc-pagelist">
+            {% for theme in themes %}
+                {{ include('partials/tease/theme.html.twig', { theme: theme }, with_context = false ) }}
+            {% endfor %}
+        </nav>
+    </div>
+</section>

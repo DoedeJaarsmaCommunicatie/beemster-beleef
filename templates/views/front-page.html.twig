@@ -2,47 +2,10 @@
 
 {% block content %}
 <!-- Homepage banner -->
-<header class="front_page-banner"
-        role="banner"
-        style="background-image: url('//via.placeholder.com/1920x500')"
->
-    <section class="front_page-banner--body">
-        <h1>{{ __('De leukste activiteiten voor groepen', 'bdb') }}</h1>
-    </section>
-
-    <section class="front_page-banner--footer">
-        <a class="button is-green mr-4" href="#">
-            {{ __('Bekijk arrangementen', 'bdb') }}
-        </a>
-        <a class="button is-white" href="#">
-            {{ __('Ontdek de locaties', 'bdb') }}
-        </a>
-    </section>
-</header>
-<section role="complementary" class="bg-green-opaque py-4 theme-banner">
-    <div class="container mx-auto">
-        <h3 class="heading-2 theme-banner--title">{{ __('Onze thema\'s', 'bfb') }}</h3>
-        <nav class="theme-banner--list" role="doc-pagelist">
-            <article role="article" class="card--theme">
-                <a href="#"></a>
-                <h3 class="theme-banner--list--title">Historisch en Waanzinnig</h3>
-            </article>
-            <article role="article" class="card--theme">
-                <a href="#"></a>
-                <h3 class="theme-banner--list--title">Puur en natuur</h3>
-            </article>
-            <article role="article" class="card--theme">
-                <a href="#"></a>
-                <h3 class="theme-banner--list--title">Werelderfgoed in het kwadraat</h3>
-            </article>
-            <article role="article" class="card--theme">
-                <a href="#"></a>
-                <h3 class="theme-banner--list--title">Cultuur</h3>
-            </article>
-        </nav>
-    </div>
-</section>
-
+{{ include('partials/pages/home/banner.html.twig') }}
+<!-- Theme banner -->
+{{ include('partials/pages/home/themes.html.twig') }}
+<!-- Main content -->
 <main class="container mx-auto py-4 main-content">
     <aside class="main-content--banner" style="background-image: url('//via.placeholder.com/750x705/1c76a6')">
         <div class="main-content--banner--header">

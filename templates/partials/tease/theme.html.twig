@@ -1,0 +1,6 @@
+<article role="article" class="card--theme {{ theme.get_field('color') }}"
+         {{ dump(theme) }}
+         data-background="{{ theme.get_field('image') }}">
+    <a href="{{ theme.link }}"></a>
+    <h3 class="theme-banner--list--title">{{ theme.title }}</h3>
+</article>
