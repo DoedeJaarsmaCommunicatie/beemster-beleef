@@ -630,6 +630,9 @@ html {
 * {
   font-family: "Henriette", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-style: normal;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1,
@@ -731,7 +734,7 @@ h6,
 
 .button.is-blue {
   background-color: #1c76a6;
-  color: #242424;
+  color: white;
   border: 1px solid #1c76a6;
 }
 
@@ -745,7 +748,7 @@ h6,
 
 .button.is-blue.is-outlined:hover {
   background-color: #1c76a6;
-  color: #242424;
+  color: white;
 }
 
 .button.is-blue-opaque {
@@ -807,7 +810,7 @@ h6,
 
 .button.is-yellow {
   background-color: #e0a929;
-  color: #242424;
+  color: white;
   border: 1px solid #e0a929;
 }
 
@@ -821,7 +824,7 @@ h6,
 
 .button.is-yellow.is-outlined:hover {
   background-color: #e0a929;
-  color: #242424;
+  color: white;
 }
 
 .button.is-yellow-opaque {
@@ -904,19 +907,27 @@ h6,
   .arrangement-banner {
     position: relative;
     display: flex;
-    box-shadow: 0 3px 6px rgba(51, 51, 51, 0.2);
+    box-shadow: 0 0 6px rgba(51, 51, 51, 0.2);
   }
 
   .arrangement-banner--figure {
-    width: 200px;
-    max-height: 250px;
+    flex: 1 1 33%;
     margin: 0 1rem 0 0;
+  }
+
+  .arrangement-banner--figure img {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 
   .arrangement-banner--content {
     padding: 1rem 0 0;
     display: flex;
     flex-wrap: wrap;
+    flex: 1 1 66%;
   }
 
   .arrangement-banner--title {
@@ -935,6 +946,7 @@ h6,
   .arrangement-banner--meta {
     display: flex;
     flex: 1 1 100%;
+    align-items: center;
   }
 
   .arrangement-banner--meta > .button {
@@ -951,6 +963,14 @@ h6,
 
   .arrangement-banner svg {
     color: #31a324;
+  }
+
+  .arrangement-banner .arrangement-banner--link-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
   }
 
   .arrangement-banner:not(:last-of-type) {
@@ -1006,7 +1026,7 @@ h6,
 
 .bg-blue {
   background-color: #1c76a6;
-  color: #242424;
+  color: white;
 }
 
 .bg-blue-opaque {
@@ -1026,7 +1046,7 @@ h6,
 
 .bg-yellow {
   background-color: #e0a929;
-  color: #242424;
+  color: white;
 }
 
 .bg-yellow-opaque {
@@ -1090,6 +1110,22 @@ h6,
     width: 100%;
     text-align: center;
   }
+}
+
+.review-dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  border: 2px solid white;
+  background-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  transition: all 225ms ease;
+}
+
+.review-dot:hover, .review-dot.is-active {
+  background-color: white;
 }
 
 @media screen and (min-width: 768px) {
@@ -1173,7 +1209,7 @@ h6,
   .card--theme {
     flex: 1 1 25%;
     min-height: 20vh;
-    background: #31a324;
+    background-color: #31a324;
     padding: 1rem;
     color: white;
     text-shadow: 0 3px 6px rgba(51, 51, 51, 0.2);
@@ -1181,10 +1217,75 @@ h6,
     justify-content: center;
     text-align: center;
     display: flex;
+    background-size: cover;
+    position: relative;
+  }
+
+  .card--theme a {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
   }
 
   .card--theme:not(:last-of-type) {
     margin: 0 2rem 0 0;
+  }
+
+  .card--theme.is-red {
+    background-color: #b33d3d;
+    border-bottom: 12px solid #b33d3d;
+  }
+
+  .card--theme.is-red-opaque {
+    background-color: rgba(179, 61, 61, 0.2);
+    border-bottom: 12px solid rgba(179, 61, 61, 0.2);
+  }
+
+  .card--theme.is-blue {
+    background-color: #1c76a6;
+    border-bottom: 12px solid #1c76a6;
+  }
+
+  .card--theme.is-blue-opaque {
+    background-color: rgba(28, 118, 166, 0.2);
+    border-bottom: 12px solid rgba(28, 118, 166, 0.2);
+  }
+
+  .card--theme.is-green {
+    background-color: #31a324;
+    border-bottom: 12px solid #31a324;
+  }
+
+  .card--theme.is-green-opaque {
+    background-color: rgba(49, 163, 36, 0.2);
+    border-bottom: 12px solid rgba(49, 163, 36, 0.2);
+  }
+
+  .card--theme.is-yellow {
+    background-color: #e0a929;
+    border-bottom: 12px solid #e0a929;
+  }
+
+  .card--theme.is-yellow-opaque {
+    background-color: rgba(224, 169, 41, 0.2);
+    border-bottom: 12px solid rgba(224, 169, 41, 0.2);
+  }
+
+  .card--theme.is-gray {
+    background-color: whitesmoke;
+    border-bottom: 12px solid whitesmoke;
+  }
+
+  .card--theme.is-black {
+    background-color: #242424;
+    border-bottom: 12px solid #242424;
+  }
+
+  .card--theme.is-white {
+    background-color: white;
+    border-bottom: 12px solid white;
   }
 }
 
@@ -1203,10 +1304,20 @@ h6,
     color: white;
     display: flex;
     flex-direction: column;
+    position: relative;
   }
 
   .main-content--banner--footer {
     margin: auto auto 0;
+  }
+
+  .main-content--banner--footer .button::after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
   }
 
   .main-content--banner h2 {

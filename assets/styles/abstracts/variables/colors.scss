@@ -13,11 +13,11 @@ $white: hsl(0, 0%, 100%) !default;
 $colors: (
   'red': ($red, $white),
   'red-opaque': (color.adjust($red, $alpha: -0.8%), $black),
-  'blue': ($blue, $black),
+  'blue': ($blue, $white),
   'blue-opaque': (color.adjust($blue, $alpha: -0.8%), $black),
   'green': ($green, $white),
   'green-opaque': (color.adjust($green, $alpha: -0.8%), $black),
-  'yellow': ($yellow, $black),
+  'yellow': ($yellow, $white),
   'yellow-opaque': (color.adjust($yellow, $alpha: -0.8%), $black),
   'gray': ($gray, $black),
   'black': ($black, $white),
