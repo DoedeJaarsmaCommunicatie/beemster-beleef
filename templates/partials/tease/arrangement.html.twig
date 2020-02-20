@@ -1,0 +1,28 @@
+{% set themes = post.terms('theme', true, 'App\\Models\\Term') %}
+{% if themes|length > 0 %}
+    {% set _color = themes[0].get_field('color') %}
+{% else %}
+    {% set _color = 'is-red' %}
+{% endif %}
+{% set image = Image(post.get_field('image')) %}
+
+<article class="arrangement-banner">
+    <a href="{{ post.link }}" class="arrangement-banner--link-overlay"></a>
+    <figure class="arrangement-banner--figure">
+        <img src="{{ image.src('medium') }}" alt="{{ post.title }}" />
+    </figure>
+    <section class="arrangement-banner--content">
+        <h4 class="arrangement-banner--title">
+            {{ post.title }}
+        </h4>
+        <span class="arrangement-banner--excerpt">
+            {{ post.preview.length(10).read_more('').end('') }}
+        </span>
+
+        <aside class="arrangement-banner--meta">
+            <span><i class="far fa-clock"></i> {{ post.meta('time') }}</span>
+            <span><i class="fas fa-euro-sign"></i> {{ post.meta('price') }}</span>
+            <a class="button {{ _color}} no-radius">Bekijk</a>
+        </aside>
+    </section>
+</article>
