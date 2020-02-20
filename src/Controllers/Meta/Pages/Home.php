@@ -21,7 +21,8 @@ class Home extends Meta
 	{
 		$fields = [];
 
-		$fields [] = Field::make('text', 'header_title', __('Title'));
+		$fields [] = Field::make('text', 'header_title', __('Title'))
+			->set_default_value('De leukste activiteiten voor groepen');
 		$fields [] = Field::make('image', 'header_image', __('Image'));
 
 		return $fields;
@@ -31,7 +32,9 @@ class Home extends Meta
 	{
 		$fields = [];
 
-		$fields [] = Field::make('text', 'button_title', __('Title'));
+		$fields [] = Field::make('text', 'button_title', __('Title'))
+			->set_default_value('Organiseer je dagje uit in de beemster');
+
 		$fields [] = Field::make('image', 'button_image', __('Image'));
 
 		return $fields;
