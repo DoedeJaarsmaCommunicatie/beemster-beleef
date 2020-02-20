@@ -1,7 +1,7 @@
 @use 'abstracts';
 
 @media screen and (abstracts.get-size-query('md')) {
-  $fp-min-height: 35vh;
+  $fp-min-height: 45vh;
 
   .front_page-banner {
     min-height: $fp-min-height;

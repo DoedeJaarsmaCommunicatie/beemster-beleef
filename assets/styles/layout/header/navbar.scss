@@ -21,8 +21,8 @@
   }
 
   &:not(:last-of-type) {
-    margin: abstracts.sizes-full(0, 1rem, 0, 0);
+    margin: abstracts.sizes-full(0, 3rem, 0, 0);
   }
-  
+
   @include abstracts.transition;
 }

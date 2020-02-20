@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use Carbon_Fields\Carbon_Fields;
 use App\Controllers\Meta\Pages\Home;
+use App\Controllers\Meta\Taxonomies\Themes;
+use App\Controllers\Meta\Posts\Arrangement;
 
 class CarbonServiceProvider implements ServiceProvider
 {
@@ -23,5 +25,7 @@ class CarbonServiceProvider implements ServiceProvider
 	public function register ()
 	{
 		add_action('carbon_fields_register_fields', [Home::class, 'register']);
+		add_action('carbon_fields_register_fields', [Themes::class, 'register']);
+		add_action('carbon_fields_register_fields', [Arrangement::class, 'register']);
 	}
 }
