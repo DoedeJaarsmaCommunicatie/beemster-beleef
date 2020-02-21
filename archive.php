@@ -35,7 +35,7 @@ if (is_post_type_archive('arrangement')) {
 		return $themes->sort(static function (Term $first, Term $second) {
 			return (int) $first->get_field('position') > (int) $second->get_field('position');
 		})->toArray();
-	}, 3600);
+	});
 }
 
 return Timber::render($templates, $context);
