@@ -1,72 +1,104 @@
 @use 'abstracts';
 
-@media screen and (abstracts.get-size-query('md')) {
-  .arrangement-banner {
-    background-color: abstracts.get-color('white');
-    position: relative;
+.arrangement-banner {
+  background-color: abstracts.get-color('white');
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 6px rgba(51, 51, 51, 0.2);
+  margin: abstracts.sizes-full(0, 1rem, 1rem);
+
+  &--figure {
+    flex: 1 1 100%;
+    img {
+      width: 100%;
+      max-width: none;
+      max-height: 333px;
+      object-fit: cover;
+    }
+  }
+
+  &--content {
     display: flex;
-    box-shadow: 0 0 6px rgba(51, 51, 51, 0.2);
+    flex: 1 1 100%;
+    flex-direction: column;
+    padding: abstracts.sizes-full(1rem, 1rem, 0);
+  }
+
+  &--title {
+    font-weight: 400;
+    color: abstracts.get-color('green');
+    margin: abstracts.sizes-full(0, 0, 0.5rem);
+  }
+
+  &--excerpt {
+    display: block;
+    margin: abstracts.sizes-full(0, 0, 0.5rem);
+    flex: 1 1 100%;
+  }
+
+  &--meta {
+    display: flex;
+    flex: 1 1 100%;
+    align-items: center;
+    margin: abstracts.sizes-full(auto, 0, 0);
+    > .button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      line-height: 1;
+    }
+
+    > * {
+      flex: 1 1 auto;
+    }
+  }
+
+  svg {
+    color: abstracts.get-color('green');
+  }
+
+  .arrangement-banner--link-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  @media screen and (abstracts.get-size-query('md')) {
+    flex-direction: row;
+    margin: abstracts.sizes-full(0, 0, 0, 0);
 
     &--figure {
       flex: 1 1 33%;
       margin: abstracts.sizes-full(0, 1rem, 0, 0);
 
       img {
-        width: 100%;
         height: 100%;
-        max-width: none;
-        object-fit: cover;
+        max-height: unset;
       }
     }
 
     &--content {
       padding: abstracts.sizes-full(1rem, 0, 0);
       display: flex;
+      flex-direction: row;
       flex-wrap: wrap;
       flex: 1 1 66%;
     }
 
     &--title {
-      font-weight: 400;
-      color: abstracts.get-color('green');
-      margin: abstracts.sizes-full(0, 0, .5rem);
       flex: 1 1 100%;
     }
 
     &--excerpt {
-      display: block;
-      margin: abstracts.sizes-full(0, 0, .5rem);
-      flex: 1 1 100%;
     }
 
     &--meta {
-      display: flex;
-      flex: 1 1 100%;
-      align-items: center;
-      margin: abstracts.sizes-full(auto, 0, 0);
       > .button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.3rem;
-        line-height: 1;
       }
-
-      > * {
-        flex: 1 1 auto;
-      }
-    }
-
-    svg {
-      color: abstracts.get-color('green');
-    }
-
-    .arrangement-banner--link-overlay {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
     }
 
     &:not(:last-of-type) {
