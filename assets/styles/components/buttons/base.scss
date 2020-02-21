@@ -3,7 +3,13 @@
 %btn {
   padding: abstracts.sizes-full(.5rem, .875rem);
   border-radius: 8px;
-  display: inline-block;
+  display: block;
+  text-align: center;
+
+  @media screen and (abstracts.get-size-query('md')) {
+    display: inline-block;
+    text-align: right;
+  }
 }
 
 .button {
