@@ -2,12 +2,16 @@
 @use 'sass:map';
 @use "abstracts/variables/screens";
 
-@function get-size-query($screen, $max: false) {
-  $screen: map.get(screens.$screens, $screen);
+@function get-size-query($scr, $max: false) {
+  $screen: map.get(screens.$screens, $scr);
 
   @if ($max) {
     @return "max-width: #{$screen + 1px}";
   }
 
   @return "min-width: #{$screen}";
+}
+
+@function get-screen-size($scr) {
+  $screen: map.get(screens.$screens, $scr);
 }

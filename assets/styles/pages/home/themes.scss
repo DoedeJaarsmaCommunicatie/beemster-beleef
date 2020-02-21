@@ -1,22 +1,21 @@
 @use 'abstracts';
 @use 'sass:color';
 
-@media screen and (abstracts.get-size-query('md')) {
-  .theme-banner {
-    &--title {
-      margin-bottom: 1rem;
-      font-weight: 400;
-      text-align: center;
-    }
+.theme-banner {
+  &--title {
+    font-weight: 400;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
 
-    &--list {
-      display: flex;
-    }
+  &--list {
+    display: flex;
+    flex-direction: column;
   }
 
   .card--theme {
-    flex: 1 1 25%;
-    min-height: 20vh;
+    flex: 1 1 100%;
+    min-height: 15vh;
     background-color: abstracts.get-color('green');
     padding: abstracts.sizes-full(1rem);
     color: abstracts.get-color('white');
@@ -27,6 +26,7 @@
     display: flex;
     background-size: cover;
     position: relative;
+    margin: abstracts.sizes-full(0, 1rem, 1rem, 1rem);
 
     a {
       position: absolute;
@@ -35,14 +35,29 @@
       bottom: 0;
       left: 0;
     }
-    &:not(:last-of-type) {
-      margin: abstracts.sizes-full(0, 2rem, 0, 0);
-    }
 
     @each $key, $color in abstracts.$colors {
       &.is-#{$key} {
         background-color: abstracts.get-color($key);
         border-bottom: 12px solid abstracts.get-color($key);
+      }
+    }
+  }
+
+  @media screen and (abstracts.get-size-query('md')) {
+    &--title {
+    }
+
+    &--list {
+      flex-direction: row;
+    }
+
+    .card--theme {
+      flex: 1 1 25%;
+      min-height: 20vh;
+
+      &:not(:last-of-type) {
+        margin: abstracts.sizes-full(0, 2rem, 0, 0);
       }
     }
   }
