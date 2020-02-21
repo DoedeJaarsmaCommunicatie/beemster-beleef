@@ -1328,25 +1328,31 @@ h6,
   margin: 0 0.5rem;
 }
 
-@media screen and (min-width: 768px) {
-  .front_page-banner {
-    min-height: 45vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem;
-  }
+.front_page-banner {
+  min-height: 45vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
 
+.front_page-banner--body {
+  text-align: center;
+  margin: auto;
+}
+
+.front_page-banner--body h1 {
+  color: white;
+  text-shadow: 0 3px 6px rgba(51, 51, 51, 0.2);
+}
+
+@media screen and (min-width: 768px) {
   .front_page-banner--body {
     width: 70vh;
-    text-align: center;
-    margin: auto;
   }
 
   .front_page-banner--body h1 {
-    color: white;
     font-size: 3rem;
-    text-shadow: 0 3px 6px rgba(51, 51, 51, 0.2);
   }
 }
 

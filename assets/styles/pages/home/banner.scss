@@ -1,28 +1,30 @@
 @use 'abstracts';
 
-@media screen and (abstracts.get-size-query('md')) {
+.front_page-banner {
   $fp-min-height: 45vh;
+  min-height: $fp-min-height;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: abstracts.sizes-full(2rem);
 
-  .front_page-banner {
-    min-height: $fp-min-height;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: abstracts.sizes-full(2rem);
+  &--body {
+    text-align: center;
+    margin: abstracts.sizes-full(auto);
 
+    h1 {
+      color: abstracts.get-color('white');
+      text-shadow: 0 3px 6px rgba(51, 51, 51, 0.2);
+    }
+  }
+
+  @media screen and (abstracts.get-size-query('md')) {
     &--body {
       width: 70vh;
-      text-align: center;
-      margin: abstracts.sizes-full(auto);
 
       h1 {
-        color: abstracts.get-color('white');
         font-size: 3rem;
-        text-shadow: 0 3px 6px rgba(51, 51, 51, 0.2);
       }
-    }
-
-    &--footer {
     }
   }
 }
