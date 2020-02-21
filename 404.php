@@ -29,4 +29,4 @@ return Timber::render([
 	Template::viewHtmlTwigFile('error-404'),
 	Template::viewHtmlTwigFile('error'),
 	Template::viewHtmlTwigFile('page'),
-],$context);
+],$context, 43200);
