@@ -15,6 +15,17 @@
     position: relative;
     &--footer {
       margin: abstracts.sizes-full(1rem, auto, 0);
+
+      .button {
+        &::after {
+          content: ' ';
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+        }
+      }
     }
 
     h2 {
@@ -35,17 +46,6 @@
 
       &--footer {
         margin: abstracts.sizes-full(auto, auto, 0);
-
-        .button {
-          &::after {
-            content: ' ';
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-          }
-        }
       }
     }
   }

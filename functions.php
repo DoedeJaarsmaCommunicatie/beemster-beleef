@@ -10,3 +10,11 @@ add_theme_support('html5', ['comment-list', 'comment-form', 'search-form', 'gall
 Timber::$locations = [
     get_stylesheet_directory() . '/templates/',
 ];
+
+if (is_admin()) {
+	Puc_v4_Factory::buildUpdateChecker(
+		'https://github.com/DoedeJaarsmaCommunicatie/beemster-beleef',
+		__FILE__,
+		'beemster-beleef'
+	);
+}

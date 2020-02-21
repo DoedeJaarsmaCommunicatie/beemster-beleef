@@ -6,12 +6,8 @@
   $screen: map.get(screens.$screens, $scr);
 
   @if ($max) {
-    @return "max-width: #{$screen + 1px}";
+    @return "max-width: #{$screen}";
   }
 
-  @return "min-width: #{$screen}";
-}
-
-@function get-screen-size($scr) {
-  $screen: map.get(screens.$screens, $scr);
+  @return "min-width: #{$screen + 1px}";
 }

@@ -648,27 +648,62 @@ h6 {
 
 h1,
 .heading-1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
+}
+
+@media screen and (min-width: 769px) {
+  h1,
+.heading-1 {
+    font-size: 2.5rem;
+  }
 }
 
 h2,
 .heading-2 {
-  font-size: 2rem;
+  font-size: 1.8rem;
+}
+
+@media screen and (min-width: 769px) {
+  h2,
+.heading-2 {
+    font-size: 2rem;
+  }
 }
 
 h3,
 .heading-3 {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
+}
+
+@media screen and (min-width: 769px) {
+  h3,
+.heading-3 {
+    font-size: 1.8rem;
+  }
 }
 
 h4,
 .heading-4 {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
+}
+
+@media screen and (min-width: 769px) {
+  h4,
+.heading-4 {
+    font-size: 1.5rem;
+  }
 }
 
 h5,
 .heading-5 {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
+}
+
+@media screen and (min-width: 769px) {
+  h5,
+.heading-5 {
+    font-size: 1.25rem;
+  }
 }
 
 h6,
@@ -679,7 +714,15 @@ h6,
 .button {
   padding: 0.5rem 0.875rem;
   border-radius: 8px;
-  display: inline-block;
+  display: block;
+  text-align: center;
+}
+
+@media screen and (min-width: 769px) {
+  .button {
+    display: inline-block;
+    text-align: right;
+  }
 }
 
 .button {
@@ -946,7 +989,7 @@ h6,
 .arrangement-banner--meta {
   display: flex;
   flex: 1 1 100%;
-  align-items: center;
+  flex-direction: column;
   margin: auto 0 0;
 }
 
@@ -974,7 +1017,7 @@ h6,
   left: 0;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .arrangement-banner {
     flex-direction: row;
     margin: 0 0 0 0;
@@ -1000,6 +1043,11 @@ h6,
 
   .arrangement-banner--title {
     flex: 1 1 100%;
+  }
+
+  .arrangement-banner--meta {
+    flex-direction: row;
+    align-items: center;
   }
 
   .arrangement-banner:not(:last-of-type) {
@@ -1116,7 +1164,7 @@ h6,
   padding: 0 0 0 4px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .header-end {
     flex: 1 1 auto;
   }
@@ -1126,7 +1174,7 @@ h6,
   max-height: 80px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .nav-bar {
     height: 100%;
     display: flex;
@@ -1254,44 +1302,30 @@ h6,
 .review-title {
   color: #242424;
   font-weight: 400;
+  text-align: center;
 }
 
-@media screen and (min-width: 768px) {
-  .review-title {
-    text-align: center;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .reviews {
-    display: flex;
-    overflow: hidden;
-  }
+.reviews {
+  display: flex;
+  overflow: hidden;
 }
 
 .review {
   text-align: center;
   line-height: 1;
+  flex: 0 0 50%;
+  margin: 0 auto;
+  display: none;
 }
 
-@media screen and (min-width: 768px) {
-  .review {
-    flex: 0 0 50%;
-    margin: 0 auto;
-    display: none;
-  }
-
-  .review.is-active {
-    display: block;
-  }
+.review.is-active {
+  display: block;
 }
 
-@media screen and (min-width: 768px) {
-  .review-indicators {
-    display: block;
-    width: 100%;
-    text-align: center;
-  }
+.review-indicators {
+  display: block;
+  width: 100%;
+  text-align: center;
 }
 
 .review-dot {
@@ -1310,12 +1344,42 @@ h6,
   background-color: white;
 }
 
-@media screen and (min-width: 768px) {
+.media {
+  display: flex;
+  padding: 0 1rem;
+}
+
+.media .image-left {
+  display: none;
+  margin-right: 1rem;
+  flex: 1 1 40%;
+}
+
+.media .image-left img {
+  border-radius: 50%;
+}
+
+.media-content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+
+.media-content .media-title {
+  font-weight: 400;
+}
+
+.media-content p {
+  margin: auto 0;
+}
+
+@media screen and (min-width: 769px) {
   .media {
-    display: flex;
+    padding: 0;
   }
 
   .media .image-left {
+    display: block;
     margin-right: 2rem;
   }
 
@@ -1323,20 +1387,6 @@ h6,
     border-radius: 50%;
     width: 200px;
     height: 200px;
-  }
-
-  .media-content {
-    display: flex;
-    flex: 1 1 auto;
-    flex-direction: column;
-  }
-
-  .media-content .media-title {
-    font-weight: 400;
-  }
-
-  .media-content p {
-    margin: auto 0;
   }
 }
 
@@ -1373,7 +1423,7 @@ h6,
   text-shadow: 0 3px 6px rgba(51, 51, 51, 0.2);
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .front_page-banner--body {
     width: 70vh;
   }
@@ -1473,7 +1523,7 @@ h6,
   border-bottom: 12px solid white;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .theme-banner--list {
     flex-direction: row;
   }
@@ -1481,6 +1531,7 @@ h6,
   .theme-banner .card--theme {
     flex: 1 1 25%;
     min-height: 20vh;
+    margin: unset;
   }
 
   .theme-banner .card--theme:not(:last-of-type) {
@@ -1508,11 +1559,20 @@ h6,
   margin: 1rem auto 0;
 }
 
+.main-content--banner--footer .button::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
 .main-content--banner h2 {
   text-align: center;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .main-content {
     flex-direction: row;
   }
@@ -1528,15 +1588,6 @@ h6,
 
   .main-content--banner--footer {
     margin: auto auto 0;
-  }
-
-  .main-content--banner--footer .button::after {
-    content: " ";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
   }
 }
 
