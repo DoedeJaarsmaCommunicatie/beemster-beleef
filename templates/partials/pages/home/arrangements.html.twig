@@ -1,5 +1,5 @@
 <section>
-    <h3 class="mb-4">Uitgelichte arrangementen</h3>
+    <h3 class="mb-4 mx-4 md:mx-0">Uitgelichte arrangementen</h3>
     <nav role="doc-pagelist" class="main-content--arrangements">
         {% for arrangement in arrangements %}
             {{ include('partials/tease/arrangement.html.twig', { post: arrangement }, with_context = false) }}
