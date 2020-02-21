@@ -11,17 +11,37 @@ class WP
 
 	protected static $enqueue_cache_scripts = [];
 
+	protected static $stylesheet_url_cache = false;
+
 	protected static $stylesheet_dir_cache = false;
+
+	public static function get_stylesheet_directory() {
+		if(static::$stylesheet_dir_cache) {
+			return static::$stylesheet_dir_cache;
+		}
+
+		return static::$stylesheet_dir_cache = trailingslashit(get_stylesheet_directory());
+	}
 
 	/**
 	 * @return string
 	 */
 	public static function get_stylesheet_directory_uri() {
-		if (static::$stylesheet_dir_cache) {
-			return static::$stylesheet_dir_cache;
+		if (static::$stylesheet_url_cache) {
+			return static::$stylesheet_url_cache;
 		}
 
-		return static::$stylesheet_dir_cache = \get_stylesheet_directory_uri();
+		return static::$stylesheet_url_cache = \get_stylesheet_directory_uri();
+	}
+
+	/**
+	 * returns an include to a file
+	 *
+	 * @param string $file
+	 */
+	public static function base_url($file)
+	{
+		include_once static::get_stylesheet_directory() . $file;
 	}
 
 	/**
