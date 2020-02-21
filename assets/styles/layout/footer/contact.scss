@@ -1,29 +1,42 @@
 @use 'abstracts';
 
 .media {
-  @media screen and (abstracts.get-size-query('md')) {
+  display: flex;
+  padding: abstracts.sizes-full(0, 1rem);
+
+  .image-left {
+    display: none;
+    margin-right: 1rem;
+    flex: 1 1 40%;
+
+    img {
+      border-radius: 50%;
+    }
+  }
+  &-content {
     display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    .media-title {
+      font-weight: 400;
+    }
+
+    p {
+      margin: abstracts.sizes-full(auto, 0);
+    }
+  }
+
+  @media screen and (abstracts.get-size-query('md')) {
+    padding: abstracts.sizes-full(0);
 
     .image-left {
+      display: block;
       margin-right: 2rem;
 
       img {
         border-radius: 50%;
         width: 200px;
         height: 200px;
-      }
-    }
-
-    &-content {
-      display: flex;
-      flex: 1 1 auto;
-      flex-direction: column;
-      .media-title {
-        font-weight: 400;
-      }
-
-      p {
-        margin: abstracts.sizes-full(auto, 0);
       }
     }
   }
