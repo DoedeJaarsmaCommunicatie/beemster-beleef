@@ -21,7 +21,7 @@ $context['themes'] = Helper::transient('themes', static function () {
 	});
 
 	return $themes->sort(static function (Term $first, Term $second) {
-		return (int) $first->get_field('position') > (int) $second->get_field('position');
+		return (int) $first->position > (int) $second->position;
 	})->toArray();
 });
 
