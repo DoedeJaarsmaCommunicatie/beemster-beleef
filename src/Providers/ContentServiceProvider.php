@@ -58,6 +58,6 @@ class ContentServiceProvider implements ServiceProvider
                 'post_type' => 'review',
                 'posts_per_page' => $limit
             ]))->toArray();
-        }, 3600);
+        }, 43200);
     }
 }
