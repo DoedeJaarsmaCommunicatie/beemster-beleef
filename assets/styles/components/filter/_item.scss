@@ -1,0 +1,62 @@
+@use 'abstracts';
+@use 'sass:color';
+
+$_border-width: 4px;
+
+.filter--item {
+  margin: abstracts.sizes-full(0, 0, 0.5rem, 0);
+  padding: abstracts.sizes-full(0, 0, 0, 1.5rem);
+  position: relative;
+  cursor: pointer;
+
+  &::before {
+    border: 1px solid abstracts.get-color('black');
+    content: ' ';
+    width: 0.9rem;
+    height: 1rem;
+    display: block;
+    position: absolute;
+    left: 0.1rem;
+    bottom: 0.1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 4px;
+    @include abstracts.transition;
+  }
+
+  &:hover {
+    &::before {
+      border-width: 2px;
+    }
+  }
+
+  &.is-active {
+    &::before {
+      background-color: abstracts.get-color('black');
+    }
+  }
+
+  input[type='checkbox'] {
+    display: none;
+
+    &:checked {
+      & ~ label {
+        font-weight: 600;
+      }
+    }
+  }
+
+  @include abstracts.transition;
+}
+
+.filter--item--label {
+  cursor: pointer;
+
+  @each $key, $color in abstracts.$colors {
+    &.is-#{$key} {
+      border-left: $_border-width solid abstracts.get-color($key);
+      margin: abstracts.sizes-full(0, 0, 0, $_border-width);
+      padding: abstracts.sizes-full(0, 0, 0, $_border-width);
+    }
+  }
+}

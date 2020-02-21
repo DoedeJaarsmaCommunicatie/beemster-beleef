@@ -1,0 +1,18 @@
+<nav class="pagination mt-4" role="doc-pagelist">
+    {% if posts.pagination.prev %}
+        {{ include('partials/pages/archive/previous.html.twig') }}
+    {% endif %}
+
+
+    {% for page in posts.pagination.pages %}
+        {% if page.link %}
+            <a href="{{page.link}}" class="{{page.class}} button is-yellow">{{page.title}}</a>
+        {% else %}
+            <span class="{{page.class}} button is-yellow-opaque">{{page.title}}</span>
+        {% endif %}
+    {% endfor %}
+
+    {% if posts.pagination.next %}
+        {{ include('partials/pages/archive/next.html.twig') }}
+    {% endif %}
+</nav>

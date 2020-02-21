@@ -2,22 +2,64 @@
 
 {% block content %}
 <div class="bg-green-opaque">
-    <div class="container mx-auto">
+    <div class="container mx-auto py-4">
+        <h1 class="text-center pb-4">{{ title }}</h1>
         <section class="flex">
             <aside class="w-1/3">
+                <h2 class="heading-4 pb-2 text-green">{{ __('Filter') }}</h2>
                 <strong>Thema's</strong>
 
                 <ul>
-                    <li><label for="theme[1]"><input type="checkbox" id="theme[1]" name="theme[1]"> Thema #1</label></li>
-                    <li><label for="theme[2]"><input type="checkbox" id="theme[2]" name="theme[2]"> Thema #2</label></li>
-                    <li><label for="theme[3]"><input type="checkbox" id="theme[3]" name="theme[3]"> Thema #3</label></li>
-                    <li><label for="theme[4]"><input type="checkbox" id="theme[4]" name="theme[4]"> Thema #4</label></li>
+                    {% for theme in themes %}
+                        <li class="filter--item {{ theme.slug in selected_themes? 'is-active' : '' }}">
+                            <input type="checkbox" {{ theme.slug in selected_themes? 'checked': '' }} name="{{ theme.slug }}" id="{{ theme.slug }}" data-param="thema" data-slug="{{ theme.slug }}">
+                            <label for="{{ theme.slug }}" class="{{ theme.get_field('color') }} filter--item--label">
+                                {{ theme.name }}
+                            </label>
+                        </li>
+                    {% endfor %}
+                </ul>
+
+                <strong>Tijdsduur</strong>
+
+                <ul>
+                    <li class="filter--item {{ '1_5-uur' in selected_times? 'is-active': '' }}">
+                        <input data-param="tijd"
+                               data-slug="1_5-uur"
+                                {{ '1_5-uur' in selected_times? 'checked': '' }}
+                               id="1_5-uur"
+                               name="1_5-uur"
+                               type="checkbox">
+                        <label for="1_5-uur" class="filter--item--label">1,5 uur</label>
+                    </li>
+                    <li class="filter--item {{ 'dagdeel' in selected_times? 'is-active': '' }}">
+                        <input data-param="tijd"
+                               data-slug="dagdeel"
+                                {{ 'dagdeel' in selected_times? 'checked': '' }}
+                               id="dagdeel"
+                               name="dagdeel"
+                               type="checkbox">
+                        <label for="dagdeel" class="filter--item--label">Dagdeel</label>
+                    </li>
+                    <li class="filter--item {{ 'hele-dag' in selected_times? 'is-active': '' }}">
+                        <input data-param="tijd"
+                               data-slug="hele-dag"
+                                {{ 'hele-dag' in selected_times? 'checked': '' }}
+                               id="hele-dag"
+                               name="hele-dag"
+                               type="checkbox">
+                        <label for="hele-dag" class="filter--item--label">Hele dag</label>
+                    </li>
                 </ul>
             </aside>
             <main class="w-2/3">
                 {% for post in posts %}
-                    {{ include('partials/tease/arrangement.html.twig', { post: post}, with_context = false) }}
+                    {{ include('partials/tease/arrangement.html.twig', { post: post }, with_context = false) }}
                 {% endfor %}
+
+                {% if posts.pagination %}
+                    {{ include('partials/pages/archive/pagination.html.twig') }}
+                {% endif %}
             </main>
         </section>
     </div>

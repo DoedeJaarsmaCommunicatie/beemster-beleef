@@ -43,7 +43,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({"dist/scripts/routes/common":"dist/scripts/routes/common","dist/scripts/routes/home":"dist/scripts/routes/home"}[chunkId]||chunkId) + ".js"
+/******/ 		return __webpack_require__.p + "" + ({"dist/scripts/routes/arrangement-archive":"dist/scripts/routes/arrangement-archive","dist/scripts/routes/common":"dist/scripts/routes/common","dist/scripts/routes/home":"dist/scripts/routes/home"}[chunkId]||chunkId) + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -295,9 +295,39 @@ function () {
   };
 }();
 
+var PostTypeArchiveArrangement =
+/*#__PURE__*/
+function () {
+  var _ref3 = _asyncToGenerator(
+  /*#__PURE__*/
+  _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+      while (1) {
+        switch (_context3.prev = _context3.next) {
+          case 0:
+            _context3.next = 2;
+            return __webpack_require__.e(/*! import() | dist/scripts/routes/arrangement-archive */ "dist/scripts/routes/arrangement-archive").then(__webpack_require__.bind(null, /*! ./routes/PostTypeArchiveArrangement */ "./assets/scripts/routes/PostTypeArchiveArrangement.js"));
+
+          case 2:
+            return _context3.abrupt("return", _context3.sent["default"]);
+
+          case 3:
+          case "end":
+            return _context3.stop();
+        }
+      }
+    }, _callee3);
+  }));
+
+  return function PostTypeArchiveArrangement() {
+    return _ref3.apply(this, arguments);
+  };
+}();
+
 var routes = new _tools_Router__WEBPACK_IMPORTED_MODULE_3__["default"]({
   common: common(),
-  home: home()
+  home: home(),
+  postTypeArchiveArrangement: PostTypeArchiveArrangement()
 });
 Object(_tools_Ready__WEBPACK_IMPORTED_MODULE_2__["default"])(function () {
   return routes.loadEvents();

@@ -1,10 +1,7 @@
 <?php
 
-use Timber\Helper;
-use App\Models\Post;
-use Timber\Timber;
-use App\Models\Term;
-use Timber\PostQuery;
+use App\Models\{Post, Term};
+use Timber\{Helper, Timber, PostQuery};
 use App\Helpers\Template;
 use DusanKasan\Knapsack\Collection;
 

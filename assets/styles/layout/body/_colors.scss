@@ -1,0 +1,8 @@
+@use 'abstracts';
+@use 'sass:color';
+
+@each $key, $color  in abstracts.$colors {
+  .text-#{$key} {
+    color: abstracts.get-color($key);
+  }
+}
