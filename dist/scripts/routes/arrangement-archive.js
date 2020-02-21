@@ -291,7 +291,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_filter_Filter__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../app/filter/Filter */ "./assets/scripts/app/filter/Filter.js");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  init: function init() {// Fire initial hooks
+  init: function init() {
+    // Fire initial hooks
+    filterOpener();
   },
   finalize: function finalize() {
     // Javascript that fires on page. after page specific JS is fires.
@@ -306,6 +308,20 @@ var themeFilter = function themeFilter() {
 
 var timeFilter = function timeFilter() {
   new _app_filter_Filter__WEBPACK_IMPORTED_MODULE_0__["default"]().setTarget('tijd').isUrl().build();
+};
+
+var filterOpener = function filterOpener() {
+  var button = document.querySelector('.js-filter-open');
+
+  if (!button) {
+    return;
+  }
+
+  button.addEventListener('click', function () {
+    var _document$querySelect;
+
+    return (_document$querySelect = document.querySelector('.js-filter')) === null || _document$querySelect === void 0 ? void 0 : _document$querySelect.classList.toggle('hidden');
+  });
 };
 
 /***/ })
