@@ -14,11 +14,16 @@ $context['themes'] = Helper::transient('themes', static function () {
 	], [], Term::class);
 
 	$themes = Collection::from($themes);
+	$themes = $themes->map(static function (Term $term) {
+		$term->color = $term->get_field('color');
+		$term->position = $term->get_field('position');
+		return $term;
+	});
 
 	return $themes->sort(static function (Term $first, Term $second) {
 		return (int) $first->get_field('position') > (int) $second->get_field('position');
 	})->toArray();
-}, 3600);
+});
 
 return Timber::render([
 	Template::viewHtmlTwigFile('error-404'),
