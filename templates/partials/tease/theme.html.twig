@@ -1,5 +1,5 @@
 <article role="article" class="card--theme {{ theme.get_field('color') }}"
          style="background-image: url('{{ Image(theme.get_field('image')).src }}')">
-    <a href="{{ theme.link }}"></a>
+    <a href="{{ get_post_type_archive_link('arrangement') }}thema/{{ theme.slug }}"></a>
     <h3 class="theme-banner--list--title">{{ theme.title }}</h3>
 </article>

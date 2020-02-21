@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Exceptions;
 
 
@@ -10,7 +9,7 @@ class MultiSiteNotEnabledException extends \Exception
     {
         parent::__construct('WordPress multi site not enabled', 0, $previous);
     }
-    
+
     public function __toString()
     {
         $trace = $this->getTrace()[0];
@@ -22,7 +21,7 @@ class MultiSiteNotEnabledException extends \Exception
             $this->getMessage()
         );
     }
-    
+
     public function throwWPError(): void
     {
         new \WP_Error($this->getCode(), $this->getMessage(), ['trace' => $this->getTrace()]);

@@ -1,8 +1,7 @@
 <?php
 namespace App\Controllers\Meta\Taxonomies;
 
-use Carbon_Fields\Field;
-use Carbon_Fields\Container;
+use Carbon_Fields\{Field, Container};
 use App\Controllers\Meta\Meta;
 
 class Themes extends Meta

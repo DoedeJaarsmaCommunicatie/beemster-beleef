@@ -3,9 +3,8 @@
 namespace App\Models;
 
 use Timber\Helper;
-use Timber\Term as TaxTerm;
 
-class Term extends TaxTerm
+class Term extends \Timber\Term
 {
 	/**
 	 * Finds any WP_Post objects and converts them to Timber\Posts

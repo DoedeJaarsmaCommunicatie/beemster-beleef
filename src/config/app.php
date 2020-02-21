@@ -2,11 +2,7 @@
 
 namespace App;
 
-use App\Providers\MenuServiceProvider;
-use App\Providers\AssetServiceProvider;
-use App\Providers\CarbonServiceProvider;
-use App\Providers\ContentServiceProvider;
-use App\Providers\RewriteServiceProvider;
+use App\Providers\{MenuServiceProvider, AssetServiceProvider, CarbonServiceProvider, ContentServiceProvider, RewriteServiceProvider};
 
 return [
     'providers'     => [

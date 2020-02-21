@@ -7,6 +7,7 @@ use DusanKasan\Knapsack\Collection;
 
 $context         = Timber::get_context();
 $context['post'] = new Post();
+
 $context['themes'] = Helper::transient('themes', static function () {
     $themes = Timber::get_terms([
         'taxonomy' => 'theme'

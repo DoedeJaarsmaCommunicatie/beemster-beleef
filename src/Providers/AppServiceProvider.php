@@ -2,8 +2,7 @@
 
 namespace App\Providers;
 
-use PostTypes\PostType;
-use PostTypes\Taxonomy;
+use PostTypes\{PostType, Taxonomy};
 
 class AppServiceProvider implements ServiceProvider
 {

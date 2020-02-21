@@ -2,8 +2,7 @@
 
 namespace App\Controllers\Meta\Posts;
 
-use Carbon_Fields\Field;
-use Carbon_Fields\Container;
+use Carbon_Fields\{Field, Container};
 use App\Controllers\Meta\Meta;
 
 class Arrangement extends Meta

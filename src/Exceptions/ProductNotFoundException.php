@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Exceptions;
 
 use Throwable;
@@ -9,7 +10,7 @@ class ProductNotFoundException extends \Exception
     {
         parent::__construct($message, $code, $previous);
     }
-    
+
     public function __toString()
     {
         $trace = $this->getTrace()[0];
@@ -21,7 +22,7 @@ class ProductNotFoundException extends \Exception
             $this->getMessage()
         );
     }
-    
+
     public function throwWPError(): void
     {
         new \WP_Error($this->getCode(), $this->getMessage(), ['trace' => $this->getTrace()]);
