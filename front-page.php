@@ -30,9 +30,9 @@ $context['arrangements'] = Helper::transient('arrangements', static function () 
         'post_type' => 'arrangement',
         'posts_per_page' => 3
     ], Post::class))->toArray();
-}, 600);
+}, 3600);
 
-return Timber::render([
+Timber::render([
     Template::viewHtmlTwigFile('front-page'),
     Template::viewHtmlTwigFile('page'),
-], $context);
+], $context, 600);
