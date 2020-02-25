@@ -1,5 +1,11 @@
 @use 'abstracts';
 
+.header-start {
+  display: flex;
+
+  @media screen and (abstracts.get-size-query('md')) {
+  }
+}
 .header-end {
   @media screen and (abstracts.get-size-query('md')) {
     flex: 1 1 auto;

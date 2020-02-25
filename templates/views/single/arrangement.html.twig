@@ -5,21 +5,25 @@
 {{ include('partials/pages/single-arrangement/meta.html.twig') }}
 
 <!-- content -->
-<main class="container mx-auto flex py-4 main-content--arrangement">
+<main class="container mx-auto flex py-8 main-content--arrangement">
     <section class="content">{{ post.content|wpautop }}</section>
 
-    <aside class="bg-green px-4 py-4">
+    <aside class="bg-green px-4 py-8">
         <h3>{{ __('Informatie aanvragen', 'bdb') }}</h3>
 
         <form action="#"></form>
     </aside>
 </main>
 
-<section class="bg-blue-opaque py-4">
+<section class="bg-blue-opaque py-8">
     <div class="container mx-auto">
         <h3 class="text-center">{{ __('Highlights', 'bdb') }}</h3>
 
-        {% for location in locations %}{% endfor %}
+        <div class="lg:flex lg:flex-wrap">
+            {% for location in locations %}
+                {{ include('partials/tease/location.html.twig', { post: location}, with_context = false) }}
+            {% endfor %}
+        </div>
     </div>
 </section>
 {% endblock %}

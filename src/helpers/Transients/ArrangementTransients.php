@@ -50,8 +50,19 @@ class ArrangementTransients
 			$post = new Post($id);
 		}
 
-		return Helper::transient("single_arrangement_meta_{$id}", static function () use ($post) {
-			return $post->get_field('locations');
+		return Helper::transient("single_arrangement_locations_{$id}", static function () use ($post) {
+			$locations = [];
+			$posts = $post->get_field('locations');
+
+			foreach ($posts as $value) {
+				$location = new Post($value['id']);
+
+				$location->meta = LocationTransients::getSingleLocationMeta($location);
+				$location->arrangements = LocationTransients::getSingleLocationArrangements($location);
+				$locations []= $location;
+			}
+
+			return $locations;
 		}, $limit);
 	}
 

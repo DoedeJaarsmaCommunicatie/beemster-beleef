@@ -11,10 +11,9 @@ $context         = Timber::get_context();
 $context['post'] = new Post();
 
 $context['themes'] = ThemeTransients::getCachedThemes();
-
 $context['arrangements'] = ArrangementTransients::getFrontArrangements();
 
 Timber::render([
     Template::viewHtmlTwigFile('front-page'),
     Template::viewHtmlTwigFile('page'),
-], $context, 600);
+], $context);

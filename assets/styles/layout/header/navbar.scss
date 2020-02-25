@@ -1,5 +1,9 @@
 @use 'abstracts';
 
+.nav-button {
+  margin-left: auto;
+}
+
 .nav-bar {
   @media screen and (abstracts.get-size-query('md')) {
     height: 100%;
@@ -10,6 +14,9 @@
 }
 
 .nav-item {
+  display:block;
+  text-align: right;
+
   color: abstracts.get-color('black');
 
   &.current-menu-item {
@@ -20,8 +27,10 @@
     color: abstracts.get-color('yellow');
   }
 
-  &:not(:last-of-type) {
-    margin: abstracts.sizes-full(0, 3rem, 0, 0);
+  @media screen and(abstracts.get-size-query('md')) {
+    &:not(:last-of-type) {
+      margin: abstracts.sizes-full(0, 3rem, 0, 0);
+    }
   }
 
   @include abstracts.transition;

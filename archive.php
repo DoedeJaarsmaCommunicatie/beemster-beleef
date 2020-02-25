@@ -29,4 +29,9 @@ if (is_post_type_archive('arrangement')) {
 	$context['themes'] = ThemeTransients::getCachedThemes();
 }
 
+if (is_post_type_archive('location')) {
+	$context ['title'] = __('Highlights', 'bdb');
+	$context['posts'] = \App\Helpers\Transients\LocationTransients::getAllLocations();
+}
+
 return Timber::render($templates, $context);

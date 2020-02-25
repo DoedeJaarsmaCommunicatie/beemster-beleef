@@ -1,0 +1,21 @@
+{% extends 'layouts/app.twig' %}
+
+{% block content %}
+    {{ include('partials/pages/single-arrangement/banner.html.twig') }}
+    <!-- content -->
+    <main class="container mx-auto flex py-8 main-content--arrangement">
+        <section class="content">{{ post.content|wpautop }}</section>
+    </main>
+
+    <section class="bg-blue-opaque py-8">
+        <div class="container mx-auto">
+            <h3 class="text-center mb-4">{{ __('Arrangementen', 'bdb') }}</h3>
+
+            <div class="lg:flex lg:flex-wrap lg:justify-center">
+                {% for arrangement in arrangements %}
+                    {{ include('partials/tease/arrangement.html.twig', { post: arrangement }, with_context = false) }}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -18,7 +18,15 @@ class Location extends Meta
             ->add_fields(static::arrangementFields());
     }
 
-    public static function arrangementFields(): array
+    public static function fields (): array
+    {
+    	$fields = [];
+    	$fields [] = Field::make('image', 'image', __('Featured image'));
+
+    	return $fields;
+    }
+
+	public static function arrangementFields(): array
     {
         $fields = [];
 

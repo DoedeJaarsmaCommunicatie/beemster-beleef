@@ -1,7 +1,10 @@
 <header class="header">
-    <div class="container mx-auto lg:flex md:py-4 px-4 lg:px-0">
+    <div class="container mx-auto lg:flex py-2 md:py-8 px-4 lg:px-0">
         <div class="header-start">
             {{ include('partials/header/logo.html.twig') }}
+            <button class="lg:hidden nav-button js-nav-button" onclick="document.querySelector('.nav-bar').classList.toggle('hidden')">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
         <div class="header-end">
             {{ include('partials/header/navbar.html.twig') }}
