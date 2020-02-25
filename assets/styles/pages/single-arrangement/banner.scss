@@ -1,0 +1,32 @@
+@use 'abstracts';
+$_min-height: 30vh;
+
+.single_arrangement-banner {
+  min-height: $_min-height;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: abstracts.sizes-full(2rem);
+  background-size: cover;
+  background-position: center center;
+
+  &--body {
+    text-align: center;
+    margin: abstracts.sizes-full(auto);
+
+    h1 {
+      color: abstracts.get-color('white');
+      text-shadow: 0 3px 6px rgba(51, 51, 51, 0.2);
+    }
+  }
+
+  @media screen and (abstracts.get-size-query('md')) {
+    &--body {
+      width: 70vh;
+
+      h1 {
+        font-size: 3rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+@use 'abstracts';
+
+.meta {
+  display: flex;
+
+  &--container {
+    align-items: center;
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+
+    svg {
+      font-size: 2rem;
+      margin: abstracts.sizes-full(0, 0, .5rem, 0);
+      color: abstracts.get-color('green');
+    }
+  }
+}

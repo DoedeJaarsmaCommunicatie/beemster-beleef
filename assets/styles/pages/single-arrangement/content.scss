@@ -1,0 +1,16 @@
+@use 'abstracts';
+
+.main-content--arrangement {
+  @media screen and (abstracts.get-size-query('md')) {
+    display: flex;
+
+    .content {
+      flex: 1 1 50%
+    }
+
+    aside {
+      flex: 1 1 auto;
+      margin-left: 4rem;
+    }
+  }
+}
