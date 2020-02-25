@@ -1,9 +1,11 @@
 <?php
 
-use App\Models\{Term, Post};
-use Timber\{Timber, Helper, PostQuery};
+defined('ABSPATH') || exit(1);
+
+use App\Models\Post;
+use Timber\{Timber, PostQuery};
 use App\Helpers\Template;
-use DusanKasan\Knapsack\Collection;
+use App\Helpers\Transients\ThemeTransients;
 
 $templates = [
 	Template::viewHtmlTwigFile('archive'),
@@ -24,18 +26,7 @@ if (is_post_type_archive('arrangement')) {
 	$context['posts'] = new PostQuery(false, Post::class);
 	$context['selected_themes'] = explode(',' ,$params['theme']?? '');
 	$context['selected_times'] = explode(',', $params['tijd']?? '');
-
-	$context['themes'] = Helper::transient('themes', static function () {
-		$themes = Timber::get_terms([
-			'taxonomy' => 'theme'
-		], [], Term::class);
-
-		$themes = Collection::from($themes);
-
-		return $themes->sort(static function (Term $first, Term $second) {
-			return (int) $first->get_field('position') > (int) $second->get_field('position');
-		})->toArray();
-	});
+	$context['themes'] = ThemeTransients::getCachedThemes();
 }
 
 return Timber::render($templates, $context);

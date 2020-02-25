@@ -1,5 +1,7 @@
 <?php
 
+defined('ABSPATH') || exit(1);
+
 use Timber\{Post, Timber};
 use App\Helpers\Template;
 
