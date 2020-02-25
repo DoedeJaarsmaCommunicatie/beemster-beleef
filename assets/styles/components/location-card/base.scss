@@ -28,14 +28,14 @@ $_spacing: 1rem;
     bottom: 0;
   }
 
-  margin-right: $_spacing;
-  &:nth-of-type(4n) {
-    margin-right: 0;
-  }
-
-  margin-bottom: $_spacing;
-
-  &:nth-last-of-type(-n+4) {
-    margin-bottom: 0;
+  @media screen and (abstracts.get-size-query('md')) {
+    margin-right: $_spacing;
+    &:nth-of-type(4n) {
+      margin-right: 0;
+    }
+    margin-bottom: $_spacing;
+    &:nth-last-of-type(-n + 4) {
+      margin-bottom: 0;
+    }
   }
 }

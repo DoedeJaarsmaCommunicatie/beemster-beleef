@@ -5,7 +5,7 @@
 {{ include('partials/pages/single-arrangement/meta.html.twig') }}
 
 <!-- content -->
-<main class="container mx-auto flex py-8 main-content--arrangement">
+<main class="container mx-auto lg:flex py-8 main-content--arrangement px-4 lg:px-0">
     <section class="content">{{ post.content|wpautop }}</section>
 
     <aside class="bg-green px-4 py-8">
@@ -17,9 +17,9 @@
 
 <section class="bg-blue-opaque py-8">
     <div class="container mx-auto">
-        <h3 class="text-center">{{ __('Highlights', 'bdb') }}</h3>
+        <h3 class="text-center pb-4">{{ __('Highlights', 'bdb') }}</h3>
 
-        <div class="lg:flex lg:flex-wrap">
+        <div class="lg:flex lg:flex-wrap px-4 lg:px-0">
             {% for location in locations %}
                 {{ include('partials/tease/location.html.twig', { post: location}, with_context = false) }}
             {% endfor %}

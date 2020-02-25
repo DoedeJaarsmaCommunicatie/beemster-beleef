@@ -151,6 +151,7 @@ class ComposerStaticInitd478b73b9349bee22e9b4091ab0df69b
         'App\\Helpers\\Str' => __DIR__ . '/../..' . '/src/helpers/Str.php',
         'App\\Helpers\\Template' => __DIR__ . '/../..' . '/src/helpers/Template.php',
         'App\\Helpers\\Transients\\ArrangementTransients' => __DIR__ . '/../..' . '/src/helpers/Transients/ArrangementTransients.php',
+        'App\\Helpers\\Transients\\LocationTransients' => __DIR__ . '/../..' . '/src/helpers/Transients/LocationTransients.php',
         'App\\Helpers\\Transients\\ThemeTransients' => __DIR__ . '/../..' . '/src/helpers/Transients/ThemeTransients.php',
         'App\\Helpers\\WP' => __DIR__ . '/../..' . '/src/helpers/WP.php',
         'App\\Models\\Post' => __DIR__ . '/../..' . '/src/Models/Post.php',

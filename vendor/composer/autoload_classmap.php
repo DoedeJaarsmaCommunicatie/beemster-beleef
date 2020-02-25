@@ -22,6 +22,7 @@ return array(
     'App\\Helpers\\Str' => $baseDir . '/src/helpers/Str.php',
     'App\\Helpers\\Template' => $baseDir . '/src/helpers/Template.php',
     'App\\Helpers\\Transients\\ArrangementTransients' => $baseDir . '/src/helpers/Transients/ArrangementTransients.php',
+    'App\\Helpers\\Transients\\LocationTransients' => $baseDir . '/src/helpers/Transients/LocationTransients.php',
     'App\\Helpers\\Transients\\ThemeTransients' => $baseDir . '/src/helpers/Transients/ThemeTransients.php',
     'App\\Helpers\\WP' => $baseDir . '/src/helpers/WP.php',
     'App\\Models\\Post' => $baseDir . '/src/Models/Post.php',

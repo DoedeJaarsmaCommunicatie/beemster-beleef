@@ -71,9 +71,7 @@ class LocationTransients
 
 			$posts = new PostQuery($query, Post::class);
 
-			foreach ($posts as $value) {
-				$post = new Post($value['id']);
-
+			foreach ($posts as $post) {
 				$post->meta = static::getSingleLocationMeta($post);
 				$post->arrangements = static::getSingleLocationArrangements($post);
 				$locations []= $post;
