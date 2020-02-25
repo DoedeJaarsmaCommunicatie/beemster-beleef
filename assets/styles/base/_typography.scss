@@ -1,5 +1,6 @@
 @use 'abstracts' as a;
 @import url('https://use.typekit.net/wgv2aih.css');
+
 html {
   font-size: 18px;
 }
@@ -67,4 +68,12 @@ h5,
 h6,
 .heading-6 {
   font-size: 1rem;
+}
+
+.content {
+  p {
+    &:not(:last-of-type) {
+      margin-bottom: .5rem;
+    }
+  }
 }
