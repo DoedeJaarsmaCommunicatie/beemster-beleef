@@ -35,8 +35,8 @@ class AppServiceProvider implements ServiceProvider
 
         $locations = new PostType([
             'name'     => 'location',
-            'singular' => 'Locatie',
-            'plural'   => 'Locaties',
+            'singular' => 'Highlight',
+            'plural'   => 'Highlights',
             'slug'     => 'locatie',
         ], [
             'has_archive' => true
