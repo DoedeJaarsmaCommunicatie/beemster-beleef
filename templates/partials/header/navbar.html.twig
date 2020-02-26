@@ -1,4 +1,4 @@
-<nav class="nav-bar hidden lg:flex" role="navigation">
+<nav class="nav-bar hidden flex lg:flex flex-col lg:flex-row" role="navigation">
     {% do action('bdb_pre_header_nav') %}
     {% for item in primaryMenu.items %}
         <a class="{{ item.classes|join(' ') }} nav-item"

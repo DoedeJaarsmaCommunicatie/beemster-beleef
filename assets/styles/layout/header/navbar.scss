@@ -15,19 +15,22 @@
 
 .nav-item {
   display:block;
-  text-align: right;
+  margin-left: auto;
 
-  color: abstracts.get-color('black');
+  &:not(.button) {
+    color: abstracts.get-color('black');
 
-  &.current-menu-item {
-    color: abstracts.get-color('green');
-  }
+    &.current-menu-item {
+      color: abstracts.get-color('green');
+    }
 
-  &:hover {
-    color: abstracts.get-color('yellow');
+    &:hover {
+      color: abstracts.get-color('yellow');
+    }
   }
 
   @media screen and(abstracts.get-size-query('md')) {
+    margin-left: unset;
     &:not(:last-of-type) {
       margin: abstracts.sizes-full(0, 3rem, 0, 0);
     }
