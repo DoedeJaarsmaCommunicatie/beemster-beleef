@@ -8,10 +8,10 @@
 <main class="container mx-auto lg:flex py-8 main-content--arrangement px-4 lg:px-0">
     <section class="content">{{ post.content|wpautop }}</section>
 
-    <aside class="bg-green px-4 py-8">
+    <aside class="bg-green-opaque px-4 py-8">
         <h3>{{ __('Informatie aanvragen', 'bdb') }}</h3>
 
-        <form action="#"></form>
+        {{ " [ninja_form id=2]"|shortcodes }}
     </aside>
 </main>
 

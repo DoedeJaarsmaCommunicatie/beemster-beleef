@@ -7,6 +7,8 @@ $_min-height: 45vh;
   flex-direction: column;
   align-items: center;
   padding: abstracts.sizes-full(2rem);
+  background-size: cover;
+  background-position: center center;
 
   &--body {
     text-align: center;
