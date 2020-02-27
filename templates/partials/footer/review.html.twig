@@ -3,7 +3,7 @@
         <h3 class="review-title heading-2 mb-4">Reviews</h3>
         <section class="reviews">
             {% for review in reviews %}
-                {{ include('partials/tease/review.html.twig', { post: review }, with_context = false) }}
+                {{ include('partials/tease/review.html.twig', { review: review }, with_context = false) }}
             {% endfor %}
         </section>
         <div class="review-indicators mt-4">
