@@ -15,7 +15,7 @@ export default class FilterItem {
   }
 
   init() {
-    this.element.addEventListener('input', e => {
+    this.element.addEventListener('click', e => {
       if (e.target.checked) {
         this.selectEvent(e);
       } else {
