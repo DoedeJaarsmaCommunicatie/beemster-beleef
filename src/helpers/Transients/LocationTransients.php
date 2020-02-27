@@ -60,7 +60,7 @@ class LocationTransients
 		}, $limit);
 	}
 
-	public static function getAllLocations()
+	public static function getAllLocations($limit = 600)
 	{
 		return Helper::transient('locations', static function () {
 			$query = [
@@ -78,6 +78,6 @@ class LocationTransients
 			}
 
 			return $locations;
-		}, 3600);
+		}, $limit);
 	}
 }
