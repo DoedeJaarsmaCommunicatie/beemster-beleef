@@ -1,19 +1,19 @@
 {% set _bg = Image(post.get_field('button_image')) %}
 <style>
     .main-content--banner {
-        background-image: url("{{ _bg.src('large') }}");
+        background-image: url("{{ _bg.src('large')|apply_filters('bdb/front-page/content/main/cta/background/url') }}");
     }
 </style>
 <aside class="main-content--banner bg-yellow-opaque">
     <div class="main-content--banner--header">
         <h2>
-            {{ post.get_field('button_title') }}
+            {{ post.get_field('button_title')|apply_filters('bdb/front-page/content/main/cta/title') }}
         </h2>
     </div>
     <div class="main-content--banner--footer">
         <a class="button is-green"
-           href="{{ get_post_type_archive_link('arrangement') }}">
-            {{ __('Bekijk de arrangementen', 'bdb') }}
+           href="{{ get_post_type_archive_link('arrangement')|apply_filters('bdb/front-page/content/main/cta/button/url') }}">
+            {{ __('Bekijk de arrangementen', 'bdb')|apply_filters('bdb/front-page/content/main/cta/button/content') }}
         </a>
     </div>
 </aside>

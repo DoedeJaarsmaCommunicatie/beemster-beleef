@@ -1,22 +1,22 @@
 {% set _bg = Image(post.get_field('header_image')) %}
 <style>
     .front_page-banner {
-        background-image: url("{{ _bg.src|apply_filters('bdb_front-page-banner_url') }}");
+        background-image: url("{{ _bg.src|apply_filters('bdb/front-page/content/banner/background-image/url') }}");
     }
 </style>
 <header class="front_page-banner bg-blue-opaque" role="banner">
     <section class="front_page-banner--body">
-        <h1>{{ post.get_field('header_title')|apply_filters('bdb_front-page-banner_title') }}</h1>
+        <h1>{{ post.get_field('header_title')|apply_filters('bdb/front-page/content/banner/title') }}</h1>
     </section>
 
     <section class="front_page-banner--footer">
-        {% do action('bdb_front-page-banner_pre_buttons') %}
-        <a class="button is-green lg:mr-4 mb-4 lg:mb-0" href="{{ get_post_type_archive_link('arrangement')|apply_filters('bdb_front-page-banner_button-one_url') }}">
-            {{ __('Bekijk de arrangementen', 'bdb')|apply_filters('bdb_front-page-banner_button_one_content') }}
+        {% do action('bdb/front-page/content/banner/buttons/pre') %}
+        <a class="button is-green lg:mr-4 mb-4 lg:mb-0" href="{{ get_post_type_archive_link('arrangement')|apply_filters('bdb/front-page/content/banner/buttons/first/url') }}">
+            {{ __('Bekijk de arrangementen', 'bdb')|apply_filters('bdb/front-page/content/banner/buttons/first/content') }}
         </a>
-        <a class="button is-white" href="{{ get_post_type_archive_link('location')|apply_filters('bdb_front-page-banner_button_two_url') }}">
-            {{ __('Ontdek de highlights', 'bdb')|apply_filters('bdb_front-page-banner_button_two_content') }}
+        <a class="button is-white" href="{{ get_post_type_archive_link('location')|apply_filters('bdb/front-page/content/banner/buttons/second/url') }}">
+            {{ __('Ontdek de highlights', 'bdb')|apply_filters('bdb/front-page/content/banner/buttons/second/content') }}
         </a>
-        {% do action('bdb_front-page-banner_post_buttons') %}
+        {% do action('bdb/front-page/content/banner/buttons/post') %}
     </section>
 </header>

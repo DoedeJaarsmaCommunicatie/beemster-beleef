@@ -7,7 +7,7 @@
 <!-- Theme banner -->
 {{ include('partials/pages/home/themes.html.twig') }}
 
-{% do action('') %}
+{% do action('bdb/front-page/content/main/pre') %}
 <!-- Main content -->
 <main class="container mx-auto py-8 main-content">
     <!-- CTA -->
@@ -15,4 +15,5 @@
     <!-- Arrangements -->
     {{ include('partials/pages/home/arrangements.html.twig') }}
 </main>
+{% do action('bdb/front-page/content/main/post') %}
 {% endblock %}
