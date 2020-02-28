@@ -1,7 +1,7 @@
 {% extends 'layouts/app.twig' %}
 
 {% block content %}
-    <div class="bg-green-opaque">
+    <div class="{{ ['bg-green-opaque']|apply_filters('bdb/archives/locations/context/class')|join(' ') }}">
         <div class="container mx-auto py-8">
             <h1 class="text-center pb-4">{{ title }}</h1>
             <main class="lg:flex lg:flex-wrap">

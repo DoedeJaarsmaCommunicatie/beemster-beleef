@@ -24,7 +24,7 @@ class Home extends Meta
 			->set_default_value('De leukste activiteiten voor groepen');
 		$fields [] = Field::make('image', 'header_image', __('Image'));
 
-		return $fields;
+		return apply_filters('bdb/meta/home/tabs/header/fields', $fields);
 	}
 
 	public static function ButtonTab(): array
@@ -36,7 +36,7 @@ class Home extends Meta
 
 		$fields [] = Field::make('image', 'button_image', __('Image'));
 
-		return $fields;
+		return apply_filters('bdb/meta/home/tabs/button/fields', $fields);
 	}
 
 

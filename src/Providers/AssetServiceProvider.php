@@ -33,17 +33,17 @@ class AssetServiceProvider implements ServiceProvider
 
     public static function styles(): void
     {
-        do_action('werf8_pre_enqueue_styles');
+        do_action('bdb/enqueue/styles/pre');
         WP::addStyle('style', WP::get_stylesheet_directory_uri() . '/dist/styles/main.css');
         WP::enqueueStyles();
-        do_action('werf8_post_enqueue_styles');
+        do_action('bdb/enqueue/styles/post');
     }
 
     public static function scripts(): void
     {
-        do_action('werf8_pre_enqueue_scripts');
+        do_action('bdb/enqueue/scripts/pre');
         WP::addScript('main', WP::get_stylesheet_directory_uri() . '/dist/scripts/main.js');
         WP::enqueueScripts();
-        do_action('werf8_post_enqueue_scripts');
+        do_action('bdb/enqueue/scripts/post');
     }
 }

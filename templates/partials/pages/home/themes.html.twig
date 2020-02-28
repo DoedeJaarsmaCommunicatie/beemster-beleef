@@ -1,10 +1,12 @@
-<section role="complementary" class="bg-green-opaque py-8 theme-banner">
+<section role="complementary" class="{{ ['bg-green-opaque', 'py-8', 'theme-banner']|apply_filters('theme_banner_class')|join(' ') }}">
     <div class="container mx-auto">
-        <h3 class="heading-2 theme-banner--title">{{ __('Onze thema\'s', 'bfb') }}</h3>
+        <h3 class="heading-2 theme-banner--title">{{ __('Onze thema\'s', 'bdb')|apply_filters('theme_banner_title') }}</h3>
+        {% do action('theme_banner_pre_themes') %}
         <nav class="theme-banner--list" role="doc-pagelist">
-            {% for theme in themes %}
+            {% for theme in themes|apply_filters('theme_banner_themes') %}
                 {{ include('partials/tease/theme.html.twig', { theme: theme }, with_context = false ) }}
             {% endfor %}
         </nav>
+        {% do action('theme_banner_post_themes') %}
     </div>
 </section>

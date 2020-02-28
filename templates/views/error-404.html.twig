@@ -2,13 +2,17 @@
 
 {% block content %}
     <main class="container mx-auto py-8 content">
-        <h1>Pagina niet gevonden!</h1>
+        <h1>{{ __('Pagina niet gevonden!', 'bdb')|apply_filters('bdb/pages/404/page-title') }}</h1>
         <p class="w-2/3">
+            {% do action('bdb/pages/404/content/pre') %}
             Deze pagina bestaat helaas niet (meer). Probeer via het menu te zoeken naar een andere pagina.
             Je kan ook onze arrangementen per thema bekijken.
             Of naar <a href="/" title="home" class="text-yellow">Onze homepage</a> gaan.
+            {% do action('bdb/pages/404/content/post') %}
         </p>
-        <p></p>
+        <p>{% do action('bdb/pages/404/content/extra') %}</p>
     </main>
-    {{ include('partials/pages/home/themes.html.twig') }}
+    {% if true|apply_filters('bdb/pages/404/themes/show') %}
+        {{ include('partials/pages/home/themes.html.twig') }}
+    {% endif %}
 {% endblock %}

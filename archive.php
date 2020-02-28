@@ -13,10 +13,14 @@ $templates = [
 	Template::viewHtmlTwigFile('archive'),
 	Template::viewHtmlTwigFile('page'),
 ];
+
 $context = Timber::get_context();
 
 if (is_post_type_archive()) {
-	array_unshift($templates, Template::viewHtmlTwigFile('archive/'. get_post_type() . '.html.twig'));
+	array_unshift(
+		$templates,
+		Template::viewHtmlTwigFile('archive/'. get_post_type())
+	);
 }
 
 $context['posts'] = new PostQuery();
@@ -36,8 +40,12 @@ if (is_post_type_archive('arrangement')) {
 }
 
 if (is_post_type_archive('location')) {
-	$context ['title'] = __('Highlights', 'bdb');
+	$context['title'] = apply_filters('bdb/pages/archives/locations/title', __('Highlights', 'bdb'));
 	$context['posts'] = LocationTransients::getAllLocations();
 }
 
-return Timber::render($templates, $context);
+return Timber::render(
+	apply_filters('bdb/pages/archives/templates', $templates),
+	apply_filters('bdb/pages/archives/context', $context),
+	apply_filters('bdb/pages/archives/cache/expire', [3600, false])
+);

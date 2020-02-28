@@ -34,6 +34,7 @@
     "autoprefixer": "^9.7.4",
     "babel-eslint": "^10.0.3",
     "core-js": "3",
+    "fslightbox": "^3.1.0",
     "prettier": "^1.19.1",
     "resolve-url-loader": "^3.1.1",
     "stylelint": "^13.1.0",

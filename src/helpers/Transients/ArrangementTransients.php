@@ -31,6 +31,7 @@ class ArrangementTransients
 				'image' => new Image($post->get_field('image')),
 				'price' => $post->get_field('price'),
 				'time' => $post->get_field('time'),
+				'gallery' => $post->get_field('gallery')
 			];
 		}, $limit);
 	}

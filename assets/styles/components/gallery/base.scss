@@ -1,0 +1,17 @@
+@use 'abstracts';
+
+.gallery {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
+
+  @media screen and (abstracts.get-size-query('md')) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  img {
+    height: 100%;
+    object-fit: cover;
+  }
+}

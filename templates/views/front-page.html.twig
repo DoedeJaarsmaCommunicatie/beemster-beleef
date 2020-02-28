@@ -3,8 +3,11 @@
 {% block content %}
 <!-- Homepage banner -->
 {{ include('partials/pages/home/banner.html.twig') }}
+
 <!-- Theme banner -->
 {{ include('partials/pages/home/themes.html.twig') }}
+
+{% do action('') %}
 <!-- Main content -->
 <main class="container mx-auto py-8 main-content">
     <!-- CTA -->

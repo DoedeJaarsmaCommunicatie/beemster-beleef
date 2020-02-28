@@ -37,7 +37,7 @@ class Arrangement extends Meta
                 'Hele dag' => 'Hele dag'
             ]);
 
-        return $fields;
+        return apply_filters('bdb/meta/arrangement/information/fields', $fields);
     }
 
     public static function locationFields(): array
@@ -51,6 +51,6 @@ class Arrangement extends Meta
                 ]
             ]);
 
-        return $fields;
+        return apply_filters('bdb/meta/arrangement/locations/fields', $fields);
     }
 }

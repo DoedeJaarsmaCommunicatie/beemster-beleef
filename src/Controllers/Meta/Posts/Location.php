@@ -26,7 +26,7 @@ class Location extends Meta
 	                      ->set_duplicates_allowed(false)
 	                      ->set_type(['image']);
 
-    	return $fields;
+    	return apply_filters('bdb/meta/location/information/fields', $fields);
     }
 
 	public static function arrangementFields(): array
@@ -41,6 +41,6 @@ class Location extends Meta
                 ]
             ]);
 
-        return $fields;
+        return apply_filters('bdb/meta/location/arrangements/fields', $fields);
     }
 }

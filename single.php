@@ -33,4 +33,4 @@ if (is_singular('location')) {
 	$context['arrangements'] = LocationTransients::getSingleLocationArrangements($context['post']);
 }
 
-Timber::render($templates, $context);
+Timber::render($templates, $context, [ 3600, false ]);

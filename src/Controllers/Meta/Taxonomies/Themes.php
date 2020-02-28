@@ -31,6 +31,7 @@ class Themes extends Meta
 				'is-yellow' => 'Geel',
 				'is-blue' => 'Blauw',
 			]);
-		return $fields;
+
+		return apply_filters('bdb/meta/themes/information/fields', $fields);
 	}
 }

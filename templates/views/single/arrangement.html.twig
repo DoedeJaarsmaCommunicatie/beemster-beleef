@@ -6,7 +6,18 @@
 
 <!-- content -->
 <main class="container mx-auto lg:flex py-8 main-content--arrangement px-4 lg:px-0">
-    <section class="content">{{ post.content|wpautop }}</section>
+    <section class="content">
+        {{ post.content|wpautop }}
+
+        <div class="gallery">
+            {% for img in meta.gallery %}
+                {% set _img = Image(img) %}
+                <a data-fslightbox href="{{ _img.src }}">
+                    <img src="{{ _img.src('medium') }}" alt="{{ _img.alt }}" title="{{ _img.title }}" >
+                </a>
+            {% endfor %}
+        </div>
+    </section>
 
     <aside class="bg-green-opaque px-4 py-8 self-start rounded-lg">
         <h3>{{ __('Informatie aanvragen', 'bdb') }}</h3>

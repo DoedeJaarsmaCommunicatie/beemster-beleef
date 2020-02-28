@@ -1,5 +1,7 @@
 {% extends 'layouts/app.twig' %}
 
 {% block content %}
+    {% do action('bdb_pre_page_content') %}
     {{ post.content }}
+    {% do action('bdb_pre_page_content') %}
 {% endblock %}
