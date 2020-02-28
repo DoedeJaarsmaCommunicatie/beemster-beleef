@@ -18,8 +18,8 @@
         <section class="lg:flex">
             <button class="button is-blue lg:hidden mx-auto mb-4 js-filter-open">Filter</button>
             <aside class="lg:w-1/3 px-4 lg:px-0 hidden lg:block js-filter">
-                <h2 class="heading-4 pb-2 text-green">{{ __('Filter') }}</h2>
-                <strong class="block">Thema's</strong>
+                <h2 class="heading-4 pb-2 text-green">{{ __('Filter', 'bdb') }}</h2>
+                <strong class="block">{{ __('Thema\'s', 'bdb') }}</strong>
 
                 <ul class="mb-2">
                     {% for theme in themes %}
@@ -32,7 +32,7 @@
                     {% endfor %}
                 </ul>
 
-                <strong class="block">Tijdsduur</strong>
+                <strong class="block">{{ __('Tijdsduur', 'bdb') }}</strong>
 
                 <ul>
                     <li class="filter--item {{ '1_5-uur' in selected_times? 'is-active': '' }}">
@@ -42,7 +42,7 @@
                                id="1_5-uur"
                                name="1_5-uur"
                                type="checkbox">
-                        <label for="1_5-uur" class="filter--item--label">1,5 uur</label>
+                        <label for="1_5-uur" class="filter--item--label">{{ __('1,5 uur', 'bdb') }}</label>
                     </li>
                     <li class="filter--item {{ 'dagdeel' in selected_times? 'is-active': '' }}">
                         <input data-param="tijd"
@@ -51,7 +51,7 @@
                                id="dagdeel"
                                name="dagdeel"
                                type="checkbox">
-                        <label for="dagdeel" class="filter--item--label">Dagdeel</label>
+                        <label for="dagdeel" class="filter--item--label">{{ __('Dagdeel', 'bdb') }}</label>
                     </li>
                     <li class="filter--item {{ 'hele-dag' in selected_times? 'is-active': '' }}">
                         <input data-param="tijd"
@@ -60,7 +60,7 @@
                                id="hele-dag"
                                name="hele-dag"
                                type="checkbox">
-                        <label for="hele-dag" class="filter--item--label">Hele dag</label>
+                        <label for="hele-dag" class="filter--item--label">{{ __('Hele dag', 'bdb') }}</label>
                     </li>
                 </ul>
             </aside>

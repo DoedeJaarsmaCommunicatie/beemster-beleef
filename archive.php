@@ -28,7 +28,7 @@ $context['posts'] = new PostQuery();
 if (is_post_type_archive('arrangement')) {
 	global $params;
 
-	$context['title'] = __('Arrangementen', 'bdb');
+	$context['title'] = apply_filters('bdb/pages/archives/arrangements/content/title', __('Arrangementen', 'bdb'));
 	$context['posts'] = new PostQuery(false, Post::class);
 	$context['selected_themes'] = explode(',' ,$params['theme']?? '');
 	$context['selected_times'] = explode(',', $params['tijd']?? '');
@@ -40,7 +40,7 @@ if (is_post_type_archive('arrangement')) {
 }
 
 if (is_post_type_archive('location')) {
-	$context['title'] = apply_filters('bdb/pages/archives/locations/title', __('Highlights', 'bdb'));
+	$context['title'] = apply_filters('bdb/pages/archives/locations/content/title', __('Highlights', 'bdb'));
 	$context['posts'] = LocationTransients::getAllLocations();
 }
 

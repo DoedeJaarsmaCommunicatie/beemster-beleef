@@ -5,7 +5,7 @@
         <div class="container mx-auto py-8">
             <h1 class="text-center pb-4">{{ title }}</h1>
             <main class="lg:flex lg:flex-wrap">
-                {% for post in posts %}
+                {% for post in posts|apply_filters('bdb/archives/locations/context/posts') %}
                     {{ include('partials/tease/location.html.twig', { post: post }, with_context = false) }}
                 {% endfor %}
 
