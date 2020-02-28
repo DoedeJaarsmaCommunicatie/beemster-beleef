@@ -37,7 +37,7 @@ class MenuServiceProvider
      */
     public function boot(): void
     {
-        register_nav_menus(apply_filters('bdb_register_menus', $this->menus));
+        register_nav_menus(apply_filters('bdb/menus/register', $this->menus));
 
         add_filter('timber/context', [ $this, 'registerContent' ]);
     }
