@@ -22,6 +22,9 @@ class Location extends Meta
     {
     	$fields = [];
     	$fields [] = Field::make('image', 'image', __('Featured image'));
+    	$fields [] = Field::make('media_gallery', 'gallery', __('Media Gallery'))
+	                      ->set_duplicates_allowed(false)
+	                      ->set_type(['image']);
 
     	return $fields;
     }
