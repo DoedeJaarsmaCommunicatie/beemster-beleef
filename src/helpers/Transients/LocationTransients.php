@@ -17,7 +17,7 @@ class LocationTransients
 	 *
 	 * @return bool|mixed
 	 */
-	public static function getSingleLocationMeta($post, int $limit = 43200)
+	public static function getSingleLocationMeta($post, int $limit = 600)
 	{
 		if ($post instanceof \Timber\Post) {
 			$id = $post->id;
@@ -39,7 +39,7 @@ class LocationTransients
 	 *
 	 * @return bool|mixed
 	 */
-	public static function getSingleLocationArrangements($post, int $limit = 43200)
+	public static function getSingleLocationArrangements($post, int $limit = 600)
 	{
 		if ($post instanceof \Timber\Post) {
 			$id = $post->id;

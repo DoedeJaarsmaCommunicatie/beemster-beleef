@@ -13,11 +13,11 @@ class ArrangementTransients
 {
 	/**
 	 * @param int|\Timber\Post $post
-	 * @param int $limit default = 43200
+	 * @param int $limit default = 600
 	 *
 	 * @return bool|mixed
 	 */
-	public static function getSingleArrangementMeta($post, int $limit = 43200)
+	public static function getSingleArrangementMeta($post, int $limit = 600)
 	{
 		if ($post instanceof \Timber\Post) {
 			$id = $post->id;
@@ -42,7 +42,7 @@ class ArrangementTransients
 	 *
 	 * @return bool|mixed
 	 */
-	public static function getSingleArrangementLocations($post, int $limit = 43200)
+	public static function getSingleArrangementLocations($post, int $limit = 600)
 	{
 		if ($post instanceof \Timber\Post) {
 			$id = $post->id;
@@ -77,6 +77,6 @@ class ArrangementTransients
 				'post_type' => 'arrangement',
 				'posts_per_page' => 3
 			], Post::class))->toArray();
-		}, 3600);
+		}, 600);
 	}
 }

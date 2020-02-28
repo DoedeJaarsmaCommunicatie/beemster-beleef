@@ -7,9 +7,9 @@
     </figure>
     <section class="location-card--content">
         <h3 class="location-card--title">{{ post.title }}</h3>
-        <p>{{ post.preview.length(10).read_more('').end('') }}</p>
+        <p>{{ post.preview.length(15).read_more('').end('...') }}</p>
     </section>
     <footer class="location-card--footer">
-        <a class="button block is-green no-radius text-center">Bekijk</a>
+        <a class="button block is-green no-radius text-center">{{ __('Bekijk', 'bdb') }}</a>
     </footer>
 </article>
