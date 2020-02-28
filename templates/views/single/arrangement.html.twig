@@ -1,12 +1,17 @@
 {% extends 'layouts/app.twig' %}
 
 {% block content %}
+{% do action('bdb/single-arrangement/banner/pre') %}
 {{ include('partials/pages/single-arrangement/banner.html.twig') }}
+{% do action('bdb/single-arrangement/banner/post') %}
+{% do action('bdb/single-arrangement/meta/pre') %}
 {{ include('partials/pages/single-arrangement/meta.html.twig') }}
+{% do action('bdb/single-arrangement/meta/post') %}
 
 <!-- content -->
 <main class="container mx-auto lg:flex py-8 main-content--arrangement px-4 lg:px-0">
     <section class="content">
+        {% do action('bdb/single-arrangement/main/pre') %}
         {{ post.content|wpautop }}
 
         <div class="gallery">
@@ -17,24 +22,29 @@
                 </a>
             {% endfor %}
         </div>
+        {% do action('bdb/single-arrangement/main/post') %}
     </section>
 
     <aside class="bg-green-opaque px-4 py-8 self-start rounded-lg">
-        <h3>{{ __('Informatie aanvragen', 'bdb') }}</h3>
+        {% do action('bdb/single-arrangement/information/pre') %}
+        <h3>{{ __('Informatie aanvragen', 'bdb')|apply_filters('bdb/single-arrangement/information/title') }}</h3>
 
-        {{ " [ninja_form id=2]"|shortcodes }}
+        {{ "[ninja_form id=2]"|apply_filters('bdb/single-arrangement/information/form')|shortcodes }}
+        {% do action('bdb/single-arrangement/information/post') %}
     </aside>
 </main>
 
 <section class="bg-blue-opaque py-8">
     <div class="container mx-auto">
-        <h3 class="text-center pb-4">{{ __('Highlights', 'bdb') }}</h3>
+        {% do action('bdb/single-arrangement/highlights/pre') %}
+        <h3 class="text-center pb-4">{{ __('Highlights', 'bdb')|apply_filters('bdb/single-arrangement/highlights/title') }}</h3>
 
         <div class="lg:flex lg:flex-wrap px-4 lg:px-0">
-            {% for location in locations %}
-                {{ include('partials/tease/location.html.twig', { post: location}, with_context = false) }}
+            {% for location in locations|apply_filters('bdb/single-arrangement/highlights') %}
+                {{ include('partials/tease/location.html.twig', { post: location }, with_context = false) }}
             {% endfor %}
         </div>
+        {% do action('bdb/single-arrangement/highlights/post') %}
     </div>
 </section>
 {% endblock %}
