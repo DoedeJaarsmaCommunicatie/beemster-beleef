@@ -2,14 +2,18 @@
     <div class="container mx-auto py-8">
         <article class="media">
             <figure class="image-left">
-                <img src="https://i.pravatar.cc/200" alt="Altijd persoonlijk contact!" />
+                <img src="{{ 'https://i.pravatar.cc/200'|apply_filters('bdb/footer/contact/image/url') }}" alt="{{ 'Altijd persoonlijk contact!'|apply_filters('bdb/footer/contact/image/alt') }}" />
             </figure>
             <div class="media-content">
-                <h3 class="media-title">Contact</h3>
-                <p>Heb je een vraag over een arrangement of wil je eerst contact. Bel of mail ons dan.</p>
+                <h3 class="media-title">{{ __('Contact', 'bdb') }}</h3>
+                {% do action('bdb/footer/contact/content/pre') %}
+                <p>{{ __('Heb je een vraag over een arrangement of wil je eerst contact. Bel of mail ons dan.', 'bdb') }}</p>
+                {% do action('bdb/footer/contact/content/post') %}
                 <footer class="media-content--footer">
-                    <a class="button is-blue is-outlined lg:mr-4 mb-4 lg:mb-0" href="tel:06 2715 3288"><i class="fas fa-phone fa-flip-horizontal mr-4"></i> 06 2715 3288</a>
-                    <a class="button is-blue is-outlined" href="mailto:info@beleefdebeemster.nl"><i class="fas fa-envelope mr-4"></i> info@beleefdebeemster.nl</a>
+                    {% do action('bdb/footer/contact/buttons/pre') %}
+                    <a class="button is-blue is-outlined lg:mr-4 mb-4 lg:mb-0" href="tel:{{ '06 2715 3288'|apply_filters('bdb/footer/contact/phone-number') }}"><i class="fas fa-phone fa-flip-horizontal mr-4"></i> {{ '06 2715 3288'|apply_filters('bdb/footer/contact/phone-number') }}</a>
+                    <a class="button is-blue is-outlined" href="mailto:{{ 'info@beleefdebeemster.nl'|apply_filters('bdb/footer/contact/mail-address') }}"><i class="fas fa-envelope mr-4"></i> {{ 'info@beleefdebeemster.nl'|apply_filters('bdb/footer/contact/mail-address') }}</a>
+                    {% do action('bdb/footer/contact/buttons/post') %}
                 </footer>
             </div>
         </article>

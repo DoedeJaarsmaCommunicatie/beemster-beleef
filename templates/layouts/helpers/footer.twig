@@ -5,7 +5,9 @@
 
 <footer class="footer">
     <div class="container mx-auto py-2">
+        {% do action('bdb/footer/nav/list/pre') %}
         <!-- Nav -->
         {{ include('partials/footer/navigation.html.twig') }}
+        {% do action('bdb/footer/nav/list/post') %}
     </div>
 </footer>
