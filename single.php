@@ -17,7 +17,7 @@ $context = Timber::get_context();
 $context['post'] = new Post();
 
 array_unshift($templates,
-	Template::viewHtmlTwigFile('single/'  . get_post_type() . '/' . $context['post']->id),
+	Template::viewHtmlTwigFile('single/' . get_post_type() . '/' . $context['post']->id),
 	Template::viewHtmlTwigFile('single/' . get_post_type() . '/' . $context['post']->slug),
 	Template::viewHtmlTwigFile('single/' . get_post_type()),
 	Template::viewHtmlTwigFile('single-' . get_post_type()),
@@ -33,4 +33,8 @@ if (is_singular('location')) {
 	$context['arrangements'] = LocationTransients::getSingleLocationArrangements($context['post']);
 }
 
-Timber::render($templates, $context, [ 3600, false ]);
+Timber::render(
+	apply_filters('bdb/pages/single/templates', $templates),
+	apply_filters('bdb/pages/single/context', $context),
+	apply_filters('bdb/pages/single/cache/expire', [3600, false])
+);

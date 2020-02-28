@@ -4,7 +4,11 @@
     {{ include('partials/pages/single-arrangement/banner.html.twig') }}
     <!-- content -->
     <main class="container mx-auto flex py-8 main-content--arrangement px-4 lg:px-0">
-        <section class="content">{{ post.content|wpautop }}</section>
+        <section class="content">
+            {% do action('bdb/single-arrangement/content/main/pre') %}
+            {{ post.content|wpautop }}
+            {% do action('bdb/single-arrangement/content/main/post') %}
+        </section>
     </main>
 
     <section class="bg-blue-opaque py-8">
@@ -12,7 +16,7 @@
             <h3 class="text-center mb-4">{{ __('Arrangementen', 'bdb') }}</h3>
 
             <div class="lg:flex lg:flex-wrap lg:justify-center">
-                {% for arrangement in arrangements %}
+                {% for arrangement in arrangements|apply_filters('bdb/single-arrangement/arrangements') %}
                     {{ include('partials/tease/arrangement.html.twig', { post: arrangement }, with_context = false) }}
                 {% endfor %}
             </div>
