@@ -7,7 +7,9 @@
             </button>
         </div>
         <div class="header-end">
+            {% do action('bdb/header/navbar/pre') %}
             {{ include('partials/header/navbar.html.twig') }}
+            {% do action('bdb/header/navbar/post') %}
         </div>
     </div>
 </header>

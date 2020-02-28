@@ -2,9 +2,9 @@
 <a class="custom-logo-nav" href="{{ site.link }}">
     <figure class="custom-logo-wrapper">
         {% do action('bdb_pre_custom_logo') %}
-        <img alt="{{ _logo.alt|apply_filters('bdb_custom_logo_alt') }}"
+        <img alt="{{ _logo.alt|apply_filters('bdb/logo/alt') }}"
              class="custom-logo"
-             src="{{ _logo.src }}">
+             src="{{ _logo.src|apply_filters('bdb/logo/src') }}">
         {% do action('bdb_post_custom_logo') %}
     </figure>
 </a>
