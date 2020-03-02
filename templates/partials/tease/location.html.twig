@@ -1,7 +1,7 @@
 {% set meta = post.meta %}
 
 {% if meta.image.src %}
-    {% set thumbnail = meta.image.src('medium') %}
+    {% set thumbnail = meta.image.src('medium_large') %}
 {% else %}
     {% set thumbnail = "https://beleefdebeemster.nl/wp-content/uploads/2020/03/Beemster-Hobrederweg-IMG_3954-scaled-e1583139046342.jpeg"|apply_filters('bdb/highlights/fallback') %}
 {% endif %}
