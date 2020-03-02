@@ -8,6 +8,7 @@ $_spacing: 1rem;
   position: relative;
   box-shadow: 0 3px 6px rgba(51, 51, 51, 0.2);
   align-self: flex-start;
+  margin: abstracts.sizes-full(0, 1rem, 1rem);
 
   &--figure {
     width: 100%;
@@ -32,11 +33,12 @@ $_spacing: 1rem;
   }
 
   @media screen and (abstracts.get-size-query('md')) {
-    margin-right: $_spacing;
+    margin: abstracts.sizes-full(0, $_spacing, $_spacing, 0);
+
     &:nth-of-type(4n) {
       margin-right: 0;
     }
-    margin-bottom: $_spacing;
+
     &:nth-last-of-type(-n + 4) {
       margin-bottom: 0;
     }

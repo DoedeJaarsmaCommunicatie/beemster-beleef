@@ -39,7 +39,7 @@
         {% do action('bdb/single-arrangement/highlights/pre') %}
         <h3 class="text-center pb-4">{{ __('Highlights', 'bdb')|apply_filters('bdb/single-arrangement/highlights/title') }}</h3>
 
-        <div class="lg:flex lg:flex-wrap px-4 lg:px-0">
+        <div class="lg:flex lg:flex-wrap">
             {% for location in locations|apply_filters('bdb/single-arrangement/highlights') %}
                 {{ include('partials/tease/location.html.twig', { post: location }, with_context = false) }}
             {% endfor %}
