@@ -32,7 +32,7 @@
   @media screen and(abstracts.get-size-query('md')) {
     margin-left: unset;
     &:not(:last-of-type) {
-      margin: abstracts.sizes-full(0, 3rem, 0, 0);
+      margin: abstracts.sizes-full(0, 2rem, 0, 0);
     }
   }
 
