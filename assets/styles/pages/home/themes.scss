@@ -16,7 +16,7 @@
 
   .card--theme {
     flex: 1 1 100%;
-    min-height: 15vh;
+    min-height: 180px;
     background-color: abstracts.get-color('green');
     padding: abstracts.sizes-full(1rem);
     color: abstracts.get-color('white');
@@ -45,7 +45,7 @@
     }
   }
 
-  @media screen and (abstracts.get-size-query('md')) {
+  @media screen and (abstracts.get-size-query('lg')) {
     &--title {
     }
 
