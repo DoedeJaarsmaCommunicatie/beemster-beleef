@@ -14,6 +14,7 @@
     flex-direction: column;
     position: relative;
     background-size: cover;
+    background-position: center center;
 
     &--footer {
       margin: abstracts.sizes-full(1rem, auto, 0);
@@ -38,8 +39,12 @@
   @media screen and (abstracts.get-size-query('md')) {
     flex-direction: row;
 
-    > * {
-      flex: 1 1 50%;
+    > &:first-child {
+      flex: 1 1 33%;
+    }
+
+    > &:last-child {
+      flex: 1 1 66%;
     }
 
     &--banner {

@@ -56,8 +56,9 @@ class ContentServiceProvider implements ServiceProvider
         return Helper::transient('reviews', static function () use ($limit) {
             return Collection::from(new PostQuery([
                 'post_type' => 'review',
-                'posts_per_page' => $limit
+                'posts_per_page' => $limit,
+
             ]))->toArray();
-        }, 43200);
+        }, 600);
     }
 }
