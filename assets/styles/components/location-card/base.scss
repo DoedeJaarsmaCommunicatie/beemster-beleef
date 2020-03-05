@@ -32,7 +32,7 @@ $_spacing: 1rem;
     bottom: 0;
   }
 
-  @media screen and (abstracts.get-size-query('md')) {
+  @media screen and (abstracts.get-size-query('lg')) {
     width: calc(25% - #{$_spacing});
     margin: abstracts.sizes-full(0, $_spacing, $_spacing, 0);
 
