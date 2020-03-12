@@ -39,15 +39,12 @@
   @media screen and (abstracts.get-size-query('md')) {
     flex-direction: row;
 
-    > &:first-child {
-      flex: 1 1 33%;
-    }
-
-    > &:last-child {
+    > section {
       flex: 1 1 66%;
     }
 
     &--banner {
+      flex: 1 1 33%;
       min-height: unset;
       margin: abstracts.sizes-full(0, 4rem, 0, 0);
 

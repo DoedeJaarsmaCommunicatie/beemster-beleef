@@ -4,7 +4,7 @@ $_spacing: 1rem;
 .location-card {
   background: abstracts.get-color('white');
   // flex settings
-  flex: 0 1 calc(25% - #{$_spacing});
+  flex: 1 1 auto;
   position: relative;
   box-shadow: 0 3px 6px rgba(51, 51, 51, 0.2);
   align-self: flex-start;
@@ -32,7 +32,8 @@ $_spacing: 1rem;
     bottom: 0;
   }
 
-  @media screen and (abstracts.get-size-query('md')) {
+  @media screen and (abstracts.get-size-query('lg')) {
+    width: calc(25% - #{$_spacing});
     margin: abstracts.sizes-full(0, $_spacing, $_spacing, 0);
 
     &:nth-of-type(4n) {
