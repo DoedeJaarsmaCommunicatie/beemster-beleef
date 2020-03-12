@@ -3,8 +3,6 @@
 .arrangement-banner {
   background-color: abstracts.get-color('white');
   position: relative;
-  display: flex;
-  flex-direction: column;
   box-shadow: 0 0 6px rgba(51, 51, 51, 0.2);
   margin: abstracts.sizes-full(0, 1rem, 1rem);
 
@@ -68,6 +66,7 @@
   }
 
   @media screen and (abstracts.get-size-query('md')) {
+    display: flex;
     flex-direction: row;
     margin: abstracts.sizes-full(0, 0, 0, 0);
 
