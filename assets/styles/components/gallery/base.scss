@@ -6,6 +6,10 @@
   grid-template-columns: 1fr;
   grid-gap: 1rem;
 
+  @media screen and (abstracts.get-size-query('sm')) {
+    grid-template-columns: 1fr 1fr;
+  }
+
   @media screen and (abstracts.get-size-query('md')) {
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -13,5 +17,6 @@
   img {
     height: 100%;
     object-fit: cover;
+    width: 100%;
   }
 }
