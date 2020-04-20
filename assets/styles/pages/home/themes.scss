@@ -60,6 +60,10 @@
     &--title {
     }
 
+    &--list {
+      flex-wrap: nowrap;
+    }
+
     .card--theme {
       flex: 1 1 25%;
       min-height: 20vh;
