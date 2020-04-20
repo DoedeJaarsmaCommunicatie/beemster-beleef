@@ -46,6 +46,11 @@
   }
 
   @media screen and (abstracts.get-size-query('md')) {
+    &--list {
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+
     .card--theme {
       flex: 1 1 45%;
     }
@@ -53,10 +58,6 @@
 
   @media screen and (abstracts.get-size-query('lg')) {
     &--title {
-    }
-
-    &--list {
-      flex-direction: row;
     }
 
     .card--theme {
