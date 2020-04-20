@@ -45,7 +45,7 @@
     }
   }
 
-  @media screen and (abstracts.get-size-query('md')) {
+  @media screen and (abstracts.get-size-query('sm')) {
     &--list {
       flex-wrap: wrap;
       flex-direction: row;
