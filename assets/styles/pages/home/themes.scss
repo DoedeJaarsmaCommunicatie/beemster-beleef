@@ -45,6 +45,12 @@
     }
   }
 
+  @media screen and (abstracts.get-size-query('md')) {
+    .card--theme {
+      flex: 1 1 45%;
+    }
+  }
+
   @media screen and (abstracts.get-size-query('lg')) {
     &--title {
     }
