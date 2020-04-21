@@ -36,6 +36,12 @@
     }
   }
 
+  @media screen and (abstracts.get-size-query('md')) {
+    &--banner {
+      margin: abstracts.sizes-full(0, 0, 1rem, 0);
+    }
+  }
+
   @media screen and (abstracts.get-size-query('lg')) {
     flex-direction: row;
 
