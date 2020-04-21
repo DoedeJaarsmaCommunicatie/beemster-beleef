@@ -36,7 +36,7 @@
     }
   }
 
-  @media screen and (abstracts.get-size-query('md')) {
+  @media screen and (abstracts.get-size-query('lg')) {
     flex-direction: row;
 
     > section {
