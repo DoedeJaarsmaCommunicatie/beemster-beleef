@@ -21,5 +21,5 @@ $context['arrangements'] = ArrangementTransients::getFrontArrangements();
 Timber::render(
 	apply_filters('bdb/pages/front-page/templates', $templates),
 	apply_filters('bdb/pages/front-page/context', $context),
-	apply_filters('bdb/pages/front-page/cache/expire', [3600, false])
+	apply_filters('bdb/pages/front-page/cache/expire', false)
 );

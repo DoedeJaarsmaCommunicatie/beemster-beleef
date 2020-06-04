@@ -11,8 +11,10 @@
         </h2>
     </div>
     <div class="main-content--banner--footer">
+        {% set pageUrl = post.get_field('button_link') %}
+        {% set link = pageUrl|length > 0? pageUrl : get_post_type_archive_link('arrangement') %}
         <a class="button is-green"
-           href="{{ get_post_type_archive_link('arrangement')|apply_filters('bdb/front-page/content/main/cta/button/url') }}">
+           href="{{ link|apply_filters('bdb/front-page/content/main/cta/button/url') }}">
             {{ __('Bekijk het arrangement', 'bdb')|apply_filters('bdb/front-page/content/main/cta/button/content') }}
         </a>
     </div>
