@@ -57,7 +57,8 @@ class ContentServiceProvider implements ServiceProvider
             return Collection::from(new PostQuery([
                 'post_type' => 'review',
                 'posts_per_page' => $limit,
-
+                'order' => 'RAND',
+                'orderby'=> 'desc'
             ]))->toArray();
         }, 600);
     }
